@@ -16,7 +16,7 @@ public class Interaction_Cube : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Rigidbody2D selfBody = gameObject.GetComponent<Rigidbody2D>();
         Vector2 upForce = new Vector2(0, speed);
