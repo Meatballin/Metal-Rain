@@ -11,6 +11,7 @@ public class Game_Controller : MonoBehaviour
     public GameObject testPrefab;
     public Camera Main_Camera;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,11 @@ public class Game_Controller : MonoBehaviour
         
          if (Input.GetMouseButtonDown(0)){
             Vector3 worldPosition = Main_Camera.ScreenToWorldPoint(Input.mousePosition);
-            Instantiate(testPrefab, worldPosition, Quaternion.identity);
+            GameObject newExplosion = Instantiate(testPrefab, worldPosition, Quaternion.identity);
+
+            // Use this to change the explosion color in script
+            // ParticleSystem.MainModule settings = newExplosion.GetComponent<ParticleSystem>().main;
+            // settings.startColor = new ParticleSystem.MinMaxGradient(Color.yellow);
          }
 
 
