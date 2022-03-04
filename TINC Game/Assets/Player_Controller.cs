@@ -89,7 +89,7 @@ public class Player_Controller : MonoBehaviour
             if (selfBody.velocity.x > -Max_Horizontal_Speed) {
                 selfBody.AddForce(leftForce);
             }
-        } else if (selfBody.velocity.x < 0){
+        } else if (selfBody.velocity.x < -0.1){
             selfBody.AddForce(new Vector2(Horizontal_Brake_Force, 0));
         }
 
@@ -98,8 +98,12 @@ public class Player_Controller : MonoBehaviour
             if (selfBody.velocity.x < Max_Horizontal_Speed) {
                 selfBody.AddForce(rightForce); 
             }
-        } else if (selfBody.velocity.x > 0){
+        } else if (selfBody.velocity.x > 0.1){
             selfBody.AddForce(new Vector2(-Horizontal_Brake_Force, 0));
+        }
+
+        if (Input.GetKey(KeyCode.S)){
+            selfBody.AddForce(controlledFallForce);
         }
 
 
