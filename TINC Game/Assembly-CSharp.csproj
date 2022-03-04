@@ -36,9 +36,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Camera_Follow_Object.cs" />
+     <Compile Include="Assets\World Controller\Camera_Follow_Object.cs" />
      <Compile Include="Assets\Interaction_Cube.cs" />
-     <Compile Include="Assets\Game_Controller.cs" />
+     <Compile Include="Assets\World Controller\Game_Controller.cs" />
+     <Compile Include="Assets\SFX\Particle_Auto_Destroy.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.28f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

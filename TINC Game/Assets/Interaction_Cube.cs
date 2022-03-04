@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Interaction_Cube : MonoBehaviour
 {
     public float speed = 10;
@@ -11,6 +12,9 @@ public class Interaction_Cube : MonoBehaviour
     private Vector2 downForce;
     private Vector2 rightForce;
     private Vector2 leftForce;
+
+
+
 
 
     // Start is called before the first frame update
@@ -25,7 +29,7 @@ public class Interaction_Cube : MonoBehaviour
 
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (Input.GetKey(KeyCode.W))
         {

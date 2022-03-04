@@ -43,3 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 640b00376aed3c54c81d9de8759055d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  framerate: 60
+  testPrefab: {fileID: 7853511854988060698, guid: c2c97155cf6b24a46afe7c620ac3ac37, type: 3}
