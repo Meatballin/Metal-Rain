@@ -7,7 +7,7 @@ public class Player_Controller : MonoBehaviour
 {
 
     // How hard (and how high) the character will jump
-    public float Jump_Power = 1300;
+    public float Jump_Power = 2000;
     // How fast the character will accelerate horizontally when controlled
     public float Acceleration = 200;
     // The max speed a player can be accelerated by the player
@@ -17,13 +17,16 @@ public class Player_Controller : MonoBehaviour
     // The maximum fall speed a player can reach 
     public float Max_Fall_Speed = 30;
     // The downward acceleration applied when a player releases all jump buttons
-    public float Controlled_Fall_Speed = 30;
+    public float Controlled_Fall_Speed = 60;
+    public float MovementSmoothing = 0.8f;
+    private float targetHorizontalSpeed = 0f;
 
     private Rigidbody2D selfBody;
     private Vector2 jump_Force;
     private Vector2 controlledFallForce;
     private Vector2 rightForce;
     private Vector2 leftForce;
+    private Vector2 m_Velocity;
 
     // The following 3 variables are used for queuing jump actions to correct for human error in jump presses
     // Results in smoother feeling controls
@@ -51,65 +54,88 @@ public class Player_Controller : MonoBehaviour
         return Physics2D.BoxCast(selfBody.position + (new Vector2(0,-1.0625f)), new Vector2(1,0.125f), 0.0f, new Vector2(0, 0), 0.0f, Traverseable_Layers);
     }
 
-
-
     // Update is called once per frame
     void Update()
     {
+        Jump();
+        HorizontalMovement();
 
-        
+    }
 
-        if ((Input.GetKeyDown(KeyCode.W)) & !(IsGrounded())) {
+    void Jump()
+    {
+
+        if ((Input.GetKeyDown(KeyCode.W)) & !(IsGrounded()))
+        {
             isJumpQueued = true;
             jumpQueueTimer = jumpQueueTimerMax;
         }
 
-        if (jumpQueueTimer > 0) {
+        if (jumpQueueTimer > 0)
+        {
             jumpQueueTimer += -1;
-            if (jumpQueueTimer <= 0){
+            if (jumpQueueTimer <= 0)
+            {
                 isJumpQueued = false;
             }
         }
 
         if ((Input.GetKeyDown(KeyCode.W)) || ((Input.GetKeyDown("space")) || isJumpQueued == true))
         {
-            if (IsGrounded()) {
+            if (IsGrounded())
+            {
                 selfBody.AddForce(jump_Force);
-            }  
-        } 
-        
+            }
+        }
+
         if ((selfBody.velocity.y < Max_Fall_Speed) & (!(Input.GetKey(KeyCode.W)) & !(Input.GetKey("space"))))
         {
             selfBody.AddForce(controlledFallForce);
         }
-
+    }
+    void HorizontalMovement()
+    {
+        //Smoothing player horizontal movement
+        Vector2 targetVelocity = new Vector2(targetHorizontalSpeed, selfBody.velocity.y);
+        selfBody.velocity = Vector2.SmoothDamp(selfBody.velocity, targetVelocity, ref m_Velocity, MovementSmoothing);
 
         if (Input.GetKey(KeyCode.A))
         {
-            if (selfBody.velocity.x > -Max_Horizontal_Speed) {
-                selfBody.AddForce(leftForce);
-            }
-        } else if (selfBody.velocity.x < -0.1){
-            selfBody.AddForce(new Vector2(Horizontal_Brake_Force, 0));
+            targetHorizontalSpeed = -Max_Horizontal_Speed;
         }
+        if (Input.GetKey(KeyCode.D))
+        {
+            targetHorizontalSpeed = Max_Horizontal_Speed;
+        }
+        
+        if((!Input.GetKey(KeyCode.A)) & !Input.GetKey(KeyCode.D))
+        {
+            targetHorizontalSpeed = 0;
+        }
+        /*else if (selfBody.velocity.x < -0.1)
+        {
+            selfBody.AddForce(new Vector2(Horizontal_Brake_Force, 0));
+        }*//*
 
         if (Input.GetKey(KeyCode.D))
         {
-            if (selfBody.velocity.x < Max_Horizontal_Speed) {
-                selfBody.AddForce(rightForce); 
+           
+            if (selfBody.velocity.x < Max_Horizontal_Speed)
+            {
+                selfBody.AddForce(rightForce);
             }
-        } else if (selfBody.velocity.x > 0.1){
+        }*/
+        /*else if (selfBody.velocity.x > 0.1)
+        {
             selfBody.AddForce(new Vector2(-Horizontal_Brake_Force, 0));
-        }
+        }*/
 
-        if (Input.GetKey(KeyCode.S)){
+        /*if (Input.GetKey(KeyCode.S))
+        {
             selfBody.AddForce(controlledFallForce);
-        }
-
+        }*/
 
     }
-
-
     // This draws the character's IsGrounded collision box in the editor
     void OnDrawGizmos()
     {
