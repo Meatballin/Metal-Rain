@@ -65,7 +65,7 @@ public class Player_Controller : MonoBehaviour
     void Jump()
     {
 
-        if ((Input.GetKeyDown(KeyCode.W)) & !(IsGrounded()))
+        if ((Input.GetKeyDown("space")) & !(IsGrounded()))
         {
             isJumpQueued = true;
             jumpQueueTimer = jumpQueueTimerMax;
@@ -80,7 +80,7 @@ public class Player_Controller : MonoBehaviour
             }
         }
 
-        if ((Input.GetKeyDown(KeyCode.W)) || ((Input.GetKeyDown("space")) || isJumpQueued == true))
+        if ((Input.GetKeyDown("space")) || (isJumpQueued == true))
         {
             if (IsGrounded())
             {
@@ -88,7 +88,7 @@ public class Player_Controller : MonoBehaviour
             }
         }
 
-        if ((selfBody.velocity.y < Max_Fall_Speed) & (!(Input.GetKey(KeyCode.W)) & !(Input.GetKey("space"))))
+        if ((selfBody.velocity.y < Max_Fall_Speed) && !(Input.GetKey("space")))
         {
             selfBody.AddForce(controlledFallForce);
         }
@@ -112,28 +112,6 @@ public class Player_Controller : MonoBehaviour
         {
             targetHorizontalSpeed = 0;
         }
-        /*else if (selfBody.velocity.x < -0.1)
-        {
-            selfBody.AddForce(new Vector2(Horizontal_Brake_Force, 0));
-        }*//*
-
-        if (Input.GetKey(KeyCode.D))
-        {
-           
-            if (selfBody.velocity.x < Max_Horizontal_Speed)
-            {
-                selfBody.AddForce(rightForce);
-            }
-        }*/
-        /*else if (selfBody.velocity.x > 0.1)
-        {
-            selfBody.AddForce(new Vector2(-Horizontal_Brake_Force, 0));
-        }*/
-
-        /*if (Input.GetKey(KeyCode.S))
-        {
-            selfBody.AddForce(controlledFallForce);
-        }*/
 
     }
     // This draws the character's IsGrounded collision box in the editor
