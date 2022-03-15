@@ -25,6 +25,11 @@ public class Player_Controller : MonoBehaviour
     private Vector2 rightForce;
     private Vector2 leftForce;
 
+    //varaibles to restart the player to start position
+    private Vector3 respawnpoint;
+    public GameObject fallDetector;
+
+
     // The following 3 variables are used for queuing jump actions to correct for human error in jump presses
     // Results in smoother feeling controls
     private bool isJumpQueued = false;
@@ -37,13 +42,14 @@ public class Player_Controller : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
         selfBody = gameObject.GetComponent<Rigidbody2D>();
         jump_Force = new Vector2(0, Jump_Power);
         controlledFallForce = new Vector2(0, -Controlled_Fall_Speed);
         leftForce = new Vector2(-Acceleration, 0);
         rightForce = new Vector2(Acceleration, 0);
+        //detects the starting position of the player
+        respawnpoint = transform.position;
     }
 
     // Checks if there is an object below the player that they may jump off of
@@ -54,11 +60,7 @@ public class Player_Controller : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
-    {
-
-        
-
+    void Update(){
         if ((Input.GetKeyDown(KeyCode.W)) & !(IsGrounded())) {
             isJumpQueued = true;
             jumpQueueTimer = jumpQueueTimerMax;
@@ -106,13 +108,28 @@ public class Player_Controller : MonoBehaviour
             selfBody.AddForce(controlledFallForce);
         }
 
+        //detects the fall detecter position
+        fallDetector.transform.position= new Vector2(transform.position.x, fallDetector.transform.position.y);
 
     }
 
 
+
+
+    /// <summary>
+    /// Is the FallDetector objects that detects if the user 
+    /// fall down and restarts the object player to the starting point
+    /// </summary>
+    /// <param name="collison"></param>
+    private void OnTriggerEnter2D(Collider2D collison){
+        if (collison.tag == "FallDetector"){
+            transform.position = respawnpoint;
+        }
+    }
+
+
     // This draws the character's IsGrounded collision box in the editor
-    void OnDrawGizmos()
-    {
+    void OnDrawGizmos(){
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position + (new Vector3(0,-1.0625f,0)), new Vector2(1,0.125f));
     }
