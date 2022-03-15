@@ -16,8 +16,7 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            GameObject.Destroy(gameObject);
-            //Instantiate(explodeParticle, transform.position, explodeParticle.transform.rotation);
+        GameObject.Destroy(gameObject);
         }
 
     }

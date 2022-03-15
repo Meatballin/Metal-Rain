@@ -9,6 +9,8 @@ public class Bullet : MonoBehaviour
     public int damage = 40;
     public Rigidbody2D rb;
 
+    public GameObject destroyEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,7 @@ public class Bullet : MonoBehaviour
         {
             enemy.TakeDamage(damage);
         }
+        GameObject newExplosion = Instantiate(destroyEffect, gameObject.transform.position, Quaternion.identity);
 
         Destroy(gameObject); 
 
