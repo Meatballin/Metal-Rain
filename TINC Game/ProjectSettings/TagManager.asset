@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - FallDetector
+  - Bullet
+  - Ladder
   layers:
   - Default
   - TransparentFX
@@ -15,7 +17,7 @@ TagManager:
   - Static Platforms
   - Dynamic Platforms
   - Player
-  - 
+  - Hittable
   - 
   - 
   - 
