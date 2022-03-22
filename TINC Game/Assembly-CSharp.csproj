@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Dynamic Objects\Weapons\Rocket.cs" />
     <Compile Include="Assets\World Controller\Camera_Follow_Object.cs" />
     <Compile Include="Assets\Dynamic Objects\Interaction_Cube\Interaction_Cube.cs" />
     <Compile Include="Assets\Dynamic Objects\Ladder\LadderMovement.cs" />
@@ -63,11 +64,14 @@
     <Compile Include="Assets\SFX\Particle_Auto_Destroy.cs" />
     <Compile Include="Assets\Dynamic Objects\JumpPads\JumpPadSmall.cs" />
     <Compile Include="Assets\Dynamic Objects\JumpPads\JumpPadMedium.cs" />
-    <Compile Include="Assets\Bullet.cs" />
+    <Compile Include="Assets\Dynamic Objects\Weapons\Bullet.cs" />
     <Compile Include="Assets\Dynamic Objects\JumpPads\JumpPadLarge.cs" />
+    <Compile Include="Assets\sprite muzzle flashes\AnimatedTexture.cs" />
     <Compile Include="Assets\Player_Controller.cs" />
     <Compile Include="Assets\World Controller\Game_Controller.cs" />
     <Compile Include="Assets\Weapon.cs" />
+    <Compile Include="Assets\AudioManager.cs" />
+    <Compile Include="Assets\Sound.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\2DWeaponPack\Sprites\README.txt" />

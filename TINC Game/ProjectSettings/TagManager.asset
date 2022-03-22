@@ -7,6 +7,7 @@ TagManager:
   - FallDetector
   - Bullet
   - Ladder
+  - Rocket
   layers:
   - Default
   - TransparentFX
