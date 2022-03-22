@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3221639460555175547}
   - component: {fileID: 5472804697517088662}
   - component: {fileID: -8418893908078756180}
-  - component: {fileID: 649695231}
+  - component: {fileID: 1626119850991907863}
   m_Layer: 9
   m_Name: Hyper Bouncy Cube
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 618310377033701364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.06, y: 2.72, z: 0}
-  m_LocalScale: {x: 1.2714311, y: 2.8606653, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.9245283, g: 0.15263437, b: 0.18891554, a: 1}
+  m_Color: {r: 0.6029599, g: 0.9056604, b: 0.24350302, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
   m_InstanceId: -1494
---- !u!114 &649695231
+--- !u!114 &1626119850991907863
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,8 +168,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 618310377033701364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e51a93201c4ecc469d5408fbc80c997, type: 3}
+  m_Script: {fileID: 11500000, guid: 91135db9d75220f428c9841b68f0a258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  is_immortal: 0
   health: 100
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 7853511854988060698, guid: c2c97155cf6b24a46afe7c620ac3ac37, type: 3}
+  impactResistance: 10

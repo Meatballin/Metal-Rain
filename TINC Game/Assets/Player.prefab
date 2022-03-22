@@ -227,7 +227,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 8672851977392324655}
-  bulletPreFab: {fileID: 6796596435308922163, guid: 432e522ba8d19ed42b3851bdfc341cfc, type: 3}
+  gameCamera: {fileID: 0}
+  rifleMuzzleFlash: {fileID: 0}
+  bulletPrefab: {fileID: 0}
+  rocketPrefab: {fileID: 0}
 --- !u!1 &3071516735040807152
 GameObject:
   m_ObjectHideFlags: 0
