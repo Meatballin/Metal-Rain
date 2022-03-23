@@ -19,6 +19,7 @@ public class Entity : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision) {
         Vector3 impactVelocity = collision.relativeVelocity;
+        GameObject collisionPartner = collision.gameObject;
 
         // Return zero or the damage, whichever is higher
         float magnitude = Mathf.Max(0f, impactVelocity.magnitude - impactResistance);
