@@ -7,6 +7,7 @@ public class Entity : MonoBehaviour
     public bool is_immortal = false;
     public float health = 100;
     public GameObject deathEffect;
+    public GameObject collisionEffect;
 
     private float damageConstant = 1;
     public float impactResistance = 0;
@@ -25,9 +26,16 @@ public class Entity : MonoBehaviour
         float magnitude = Mathf.Max(0f, impactVelocity.magnitude - impactResistance);
         // Calculate damage and apply it
         float damage = magnitude * damageConstant;
+
+        // If there is a collision effect produce it
+        if ((damage > 0) && (collisionEffect != null)){
+            Vector2 colPosition = collision.GetContact(0).point;
+            Instantiate(collisionEffect, colPosition, Quaternion.identity);
+        }
+
         ApplyDamage(damage);
         // Debug
-        Debug.Log("COLLISION DAMAGE: " + damage);
+        // Debug.Log("COLLISION DAMAGE: " + damage);
     }
 
     public void ApplyDamage(float damage)

@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 8856696233757077179}
   - component: {fileID: 3650611223101053528}
   - component: {fileID: -8037508695226623942}
+  - component: {fileID: -6943357675863013216}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -231,6 +232,22 @@ MonoBehaviour:
   rifleMuzzleFlash: {fileID: 0}
   bulletPrefab: {fileID: 0}
   rocketPrefab: {fileID: 0}
+--- !u!114 &-6943357675863013216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2464760033714269409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91135db9d75220f428c9841b68f0a258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  is_immortal: 1
+  health: 100
+  deathEffect: {fileID: 8240195757193755377, guid: 03618d01c90cc9449a0cb88e17a2dcc0, type: 3}
+  impactResistance: 0
 --- !u!1 &3071516735040807152
 GameObject:
   m_ObjectHideFlags: 0

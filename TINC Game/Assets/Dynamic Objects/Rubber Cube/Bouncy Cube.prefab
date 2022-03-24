@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3221639460555175547}
   - component: {fileID: 5472804697517088662}
   - component: {fileID: -1406026911885985550}
+  - component: {fileID: 4836338965606184292}
   m_Layer: 7
   m_Name: Bouncy Cube
   m_TagString: Untagged
@@ -158,3 +159,19 @@ MonoBehaviour:
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
   m_InstanceId: -12618
+--- !u!114 &4836338965606184292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618310377033701364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91135db9d75220f428c9841b68f0a258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  is_immortal: 0
+  health: 100
+  deathEffect: {fileID: 0}
+  impactResistance: 7
