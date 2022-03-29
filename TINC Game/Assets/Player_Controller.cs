@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Player_Controller : MonoBehaviour
-{
+public class Player_Controller : MonoBehaviour{
 
     // How hard (and how high) the character will jump
     public float Jump_Power = 2000;
@@ -29,7 +28,7 @@ public class Player_Controller : MonoBehaviour
     private Vector2 m_Velocity;
 
     //varaibles to restart the player to start position
-    private Vector3 respawnpoint;
+    //private Vector3 respawnpoint;
     // public GameObject fallDetector;
 
     // The following 3 variables are used for queuing jump actions to correct for human error in jump presses
@@ -44,16 +43,14 @@ public class Player_Controller : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
         selfBody = gameObject.GetComponent<Rigidbody2D>();
         jump_Force = new Vector2(0, Jump_Power);
         controlledFallForce = new Vector2(0, -Controlled_Fall_Speed);
         leftForce = new Vector2(-Acceleration, 0);
         rightForce = new Vector2(Acceleration, 0);
-
         //detects the starting position of the player
-        respawnpoint = transform.position;
+        //respawnpoint = transform.position;
     }
 
     // Checks if there is an object below the player that they may jump off of
@@ -62,15 +59,13 @@ public class Player_Controller : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
         Jump();
         HorizontalMovement();
 
     }
 
-    void Jump()
-    {
+    void Jump(){
 
         if ((Input.GetKeyDown("space")) & !(IsGrounded()))
         {
@@ -127,12 +122,13 @@ public class Player_Controller : MonoBehaviour
     /// fall down and restarts the object player to the starting point
     /// </summary>
     /// <param name="collison"></param>
+    /*
     private void OnTriggerEnter2D(Collider2D collison){
         if (collison.tag == "FallDetector"){
             transform.position = respawnpoint;
         }
     }
-
+    */
 
 
     // This draws the character's IsGrounded collision box in the editor

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - FallDetector
+  - Bullet
+  - Ladder
+  - checkpoint
   layers:
   - Default
   - TransparentFX
