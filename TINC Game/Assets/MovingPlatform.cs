@@ -13,7 +13,7 @@ public class MovingPlatform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = points[startPoint].position; //sets stating position of platform
+        transform.position = points[startPoint].position; //sets starting position of platform
     }
 
     // Update is called once per frame
