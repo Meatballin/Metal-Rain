@@ -28,7 +28,7 @@ public class Game_Controller : MonoBehaviour
         
          if (Input.GetMouseButtonDown(0)){
             Vector3 worldPosition = Main_Camera.ScreenToWorldPoint(Input.mousePosition);
-            GameObject newExplosion = Instantiate(testPrefab, worldPosition, Quaternion.identity);
+            //GameObject newExplosion = Instantiate(testPrefab, worldPosition, Quaternion.identity);
 
             // Use this to change the explosion color in script
             // ParticleSystem.MainModule settings = newExplosion.GetComponent<ParticleSystem>().main;

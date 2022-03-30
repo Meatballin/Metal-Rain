@@ -226,8 +226,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9881500aaaae7e848a527665dc235d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 8672851977392324655}
-  bulletPreFab: {fileID: 6796596435308922163, guid: 432e522ba8d19ed42b3851bdfc341cfc, type: 3}
+  firePoint: {fileID: 0}
+  gameCamera: {fileID: 0}
+  rifleMuzzleFlash: {fileID: 0}
+  bulletPrefab: {fileID: 6796596435308922163, guid: 432e522ba8d19ed42b3851bdfc341cfc, type: 3}
+  rocketPrefab: {fileID: 7845095633634102873, guid: e30e312bc7d74c146889f3c589003d08, type: 3}
 --- !u!1 &3071516735040807152
 GameObject:
   m_ObjectHideFlags: 0
