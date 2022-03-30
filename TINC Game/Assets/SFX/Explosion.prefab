@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7853511854876299664}
   - component: {fileID: 7853511854876299671}
   - component: {fileID: 8329724744754828749}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4896,7 +4896,7 @@ GameObject:
   - component: {fileID: 7853511854988060676}
   - component: {fileID: 7853511854988060699}
   - component: {fileID: 4468125528275573546}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9782,7 +9782,7 @@ GameObject:
   - component: {fileID: 7853511855069057247}
   - component: {fileID: 7853511855069057246}
   - component: {fileID: 8509348393759814564}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}

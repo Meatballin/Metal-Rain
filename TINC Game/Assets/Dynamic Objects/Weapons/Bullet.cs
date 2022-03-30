@@ -24,6 +24,11 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D hitInfo)
     {
+        if (hitInfo.tag == "Shootable"){
+            Entity entity = hitInfo.GetComponent<Entity>();
+        }
+
+
         //Damage applied to enemy
         Enemy enemy = hitInfo.GetComponent<Enemy>();
         if (enemy != null)
