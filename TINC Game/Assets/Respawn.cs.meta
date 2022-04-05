@@ -3,7 +3,10 @@ guid: 65d8769cad9f32247ba95b02f08f7a77
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - redFlag: {instanceID: 0}
+  - greenFlag: {instanceID: 0}
+  - fallDetector: {fileID: 1973301302142241764, guid: 143c90997e331794d99644eb62ee2e7a, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
