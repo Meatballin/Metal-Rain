@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -33,9 +34,10 @@ public class Weapon : MonoBehaviour
     public GameObject rocketPrefab;
     private float rpgFireRate = 0.35f;
 
-    //SHOTGUN CODE
+    //shotgun
     private float shotgunFireRate = 0.8f;
-    
+    public GameObject pellet;
+
     private void Start()
     {
         initializeWepScene();
@@ -79,6 +81,7 @@ public class Weapon : MonoBehaviour
             weaponUI.transform.Find("M4Icon").gameObject.transform.localScale = new Vector3(.7f, .7f, .7f);
             weaponUI.transform.Find("DeagleIcon").gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
             weaponUI.transform.Find("RPGIcon").gameObject.transform.localScale = new Vector3(.7f, .7f, .7f);
+            weaponUI.transform.Find("ShotgunIcon").gameObject.transform.localScale = new Vector3(.7f, .7f, .7f);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && weapons[1])
         {
@@ -86,6 +89,7 @@ public class Weapon : MonoBehaviour
             weaponUI.transform.Find("M4Icon").gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
             weaponUI.transform.Find("DeagleIcon").gameObject.transform.localScale = new Vector3(.7f, .7f, .7f);
             weaponUI.transform.Find("RPGIcon").gameObject.transform.localScale = new Vector3(.7f, .7f, .7f);
+            weaponUI.transform.Find("ShotgunIcon").gameObject.transform.localScale = new Vector3(.7f, .7f, .7f);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && weapons[2])
         {
@@ -93,10 +97,15 @@ public class Weapon : MonoBehaviour
             weaponUI.transform.Find("RPGIcon").gameObject.transform.localScale = new Vector3(1, 1f, 1f);
             weaponUI.transform.Find("M4Icon").gameObject.transform.localScale = new Vector3(.7f, .7f, .7f);
             weaponUI.transform.Find("DeagleIcon").gameObject.transform.localScale = new Vector3(.7f, .7f, .7f);
+            weaponUI.transform.Find("ShotgunIcon").gameObject.transform.localScale = new Vector3(.7f, .7f, .7f);
         }
         if (Input.GetKeyDown(KeyCode.Alpha4) && weapons[3])
         {
             currentWeapon = 3;
+            weaponUI.transform.Find("ShotgunIcon").gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+            weaponUI.transform.Find("RPGIcon").gameObject.transform.localScale = new Vector3(.7f, .7f, .7f);
+            weaponUI.transform.Find("M4Icon").gameObject.transform.localScale = new Vector3(.7f, .7f, .7f);
+            weaponUI.transform.Find("DeagleIcon").gameObject.transform.localScale = new Vector3(.7f, .7f, .7f);
         }
     }
 
@@ -121,7 +130,8 @@ public class Weapon : MonoBehaviour
         transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
         transform.GetChild(1).GetChild(1).gameObject.SetActive(false);
         transform.GetChild(1).GetChild(2).gameObject.SetActive(false);
-        
+        transform.GetChild(1).GetChild(3).gameObject.SetActive(false);
+
 
         AimHandler();
         if (Input.GetButton("Fire1"))
@@ -158,7 +168,8 @@ public class Weapon : MonoBehaviour
         transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
         transform.GetChild(1).GetChild(1).gameObject.SetActive(true);
         transform.GetChild(1).GetChild(2).gameObject.SetActive(false);
-        
+        transform.GetChild(1).GetChild(3).gameObject.SetActive(false);
+
 
 
         AimHandler();
@@ -182,7 +193,8 @@ public class Weapon : MonoBehaviour
         transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
         transform.GetChild(1).GetChild(1).gameObject.SetActive(false);
         transform.GetChild(1).GetChild(2).gameObject.SetActive(true);
-        
+        transform.GetChild(1).GetChild(3).gameObject.SetActive(false);
+
 
         AimHandler();
         if(Input.GetButtonDown("Fire1"))
@@ -241,21 +253,31 @@ public class Weapon : MonoBehaviour
     {
         if (Time.time > shotgunFireRate + lastShot)
         {
-            FindObjectOfType<AudioManager>().Play("DeagleSound");
-            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            lastShot = Time.time;
+            int bulletCount = 7;
+            Quaternion newRotation = firePoint.rotation;
+            float spread = 1;
+            FindObjectOfType<AudioManager>().Play("ShotgunSound");
+            for (int i = 0; i < bulletCount; i++)
+            {
+                float addedOffset = (i - (bulletCount / 2) * spread);
+                newRotation = Quaternion.Euler(firePoint.transform.eulerAngles.x,
+                                                firePoint.transform.eulerAngles.y,
+                                                firePoint.transform.eulerAngles.z + addedOffset);
 
+                Instantiate(pellet, firePoint.position, newRotation);
+            }
+            lastShot = Time.time;
         }
     }
 
     private void ShotgunProfile()
     {
-        //Turns off M4 and brings in RPG
-        /*transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
-        transform.GetChild(1).GetChild(1).gameObject.SetActive(true);*/
-
+        transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
+        transform.GetChild(1).GetChild(1).gameObject.SetActive(false);
+        transform.GetChild(1).GetChild(2).gameObject.SetActive(false);
+        transform.GetChild(1).GetChild(3).gameObject.SetActive(true);
         AimHandler();
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
             shotgunShoot();
         }
@@ -295,6 +317,14 @@ public class Weapon : MonoBehaviour
             
             Destroy(collision.gameObject);
         }
-        
+        if (collision.gameObject.layer == 13)
+        {
+            weapons[3] = true;
+            weaponUI.transform.Find("ShotgunIcon").gameObject.SetActive(true);
+
+            Destroy(collision.gameObject);
+        }
+
+
     }
 }

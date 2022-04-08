@@ -76,6 +76,7 @@
     <Compile Include="Assets\Player_Controller.cs" />
     <Compile Include="Assets\World Controller\Game_Controller.cs" />
     <Compile Include="Assets\Weapon.cs" />
+    <Compile Include="Assets\Dynamic Objects\Weapons\Pellet.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\2DWeaponPack\Sprites\README.txt" />
