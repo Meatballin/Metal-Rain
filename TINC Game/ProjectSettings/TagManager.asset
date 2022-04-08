@@ -21,9 +21,9 @@ TagManager:
   - Player
   - Hittable
   - Particles
-  - 
-  - 
-  - 
+  - M4Pickup
+  - RPGPickup
+  - GLPickup
   - 
   - 
   - 
