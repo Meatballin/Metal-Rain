@@ -18,13 +18,13 @@ public class Weapon : MonoBehaviour
     [SerializeField] private bool[] weapons = new bool[totalNumWeapons];
 
     //DEAGLE CODE
-    private float deagleFireRate = 0.4f;
+    private float deagleFireRate = 0.25f;
     
     //RIFLE CODE
     public GameObject rifleMuzzleFlash;
     public GameObject bulletPrefab;
     private bool isFlashing = false;
-    private float rifleFireRate = 0.1f;
+    private float rifleFireRate = 0.1195f;
     private float framesFlashed;
     private float maxFlashFrames = 2f;
     private float lastShot = 0.0f;
@@ -124,7 +124,7 @@ public class Weapon : MonoBehaviour
         
 
         AimHandler();
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
             DeagleShoot();
         }
@@ -171,8 +171,8 @@ public class Weapon : MonoBehaviour
             
 
         }
-        if (Input.GetButtonUp("Fire1"))
-             FindObjectOfType<AudioManager>().Play("RifleEndSound");
+       /* if (Input.GetButtonUp("Fire1"))
+             FindObjectOfType<AudioManager>().Play("RifleEndSound");*/
         
     }
 
