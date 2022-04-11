@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5875721685911382711}
   m_Layer: 7
   m_Name: Interaction_Cube 1
-  m_TagString: Untagged
+  m_TagString: Shootable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -189,6 +189,7 @@ MonoBehaviour:
   is_immortal: 1
   health: 100
   deathEffect: {fileID: 0}
+  collisionEffect: {fileID: 0}
   impactResistance: 10
 --- !u!1 &1732104247816081916
 GameObject:

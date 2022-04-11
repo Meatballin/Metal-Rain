@@ -9,6 +9,7 @@ TagManager:
   - Ladder
   - checkpoint
   - Rocket
+  - Shootable
   layers:
   - Default
   - TransparentFX

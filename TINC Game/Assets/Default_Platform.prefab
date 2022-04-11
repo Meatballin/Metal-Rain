@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4872258520295203092}
   - component: {fileID: 8694989909115029912}
   - component: {fileID: 3783959160305122305}
+  - component: {fileID: 9170168598269749280}
   m_Layer: 6
   m_Name: Default_Platform
   m_TagString: Untagged
@@ -158,3 +159,20 @@ MonoBehaviour:
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
   m_InstanceId: -20906
+--- !u!114 &9170168598269749280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3767564164372853603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91135db9d75220f428c9841b68f0a258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  is_immortal: 1
+  health: 100
+  deathEffect: {fileID: 0}
+  collisionEffect: {fileID: 1507177533203784377, guid: e7c2a6721cecc0546ba0ee84e65cfa98, type: 3}
+  impactResistance: 4
