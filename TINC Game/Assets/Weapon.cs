@@ -182,8 +182,6 @@ public class Weapon : MonoBehaviour
             
 
         }
-       /* if (Input.GetButtonUp("Fire1"))
-             FindObjectOfType<AudioManager>().Play("RifleEndSound");*/
         
     }
 

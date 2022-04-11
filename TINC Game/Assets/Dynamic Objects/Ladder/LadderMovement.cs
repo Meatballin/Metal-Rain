@@ -6,18 +6,21 @@ public class LadderMovement : MonoBehaviour
 {
     private float verticalMovement;
     private float speed = 10f;
-    private bool isLadder;
+    [SerializeField] private bool isLadder;
     private bool isClimbing;
 
     [SerializeField] private Rigidbody2D self;
-
+    
     private void Update()
     {
+        //Mathf.Abs(verticalMovement) > 0)
         verticalMovement = Input.GetAxis("Vertical");
-        if(isLadder && Mathf.Abs(verticalMovement) > 0)
+        if(isLadder && Input.GetButton("Vertical"))
         {
             isClimbing = true;
         }
+
+       
     }
 
     private void FixedUpdate()
@@ -31,13 +34,20 @@ public class LadderMovement : MonoBehaviour
             self.gravityScale = 3f;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.CompareTag("Ladder"))
+        if (collision.CompareTag("Ladder"))
         {
             isLadder = true;
         }
     }
+    /* private void OnTriggerStay(Collider2D collision)
+     {
+         if(collision.CompareTag("Ladder"))
+         {
+             isLadder = true;
+         }
+     }*/
 
     private void OnTriggerExit2D(Collider2D collision)
     {

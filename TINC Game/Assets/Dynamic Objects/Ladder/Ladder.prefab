@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8156491137340301236}
   - component: {fileID: 8156491137340301237}
   - component: {fileID: 8156491137340301238}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Ladder
   m_Icon: {fileID: 0}
