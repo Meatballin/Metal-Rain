@@ -15,7 +15,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ladder
   - Water
   - UI
   - Static Platforms
@@ -23,9 +23,9 @@ TagManager:
   - Player
   - Hittable
   - Particles
-  - 
-  - 
-  - 
+  - M4Pickup
+  - RPGPickup
+  - SGPickup
   - 
   - 
   - 
