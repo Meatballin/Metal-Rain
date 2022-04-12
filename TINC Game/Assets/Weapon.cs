@@ -170,8 +170,6 @@ public class Weapon : MonoBehaviour
         transform.GetChild(1).GetChild(2).gameObject.SetActive(false);
         transform.GetChild(1).GetChild(3).gameObject.SetActive(false);
 
-
-
         AimHandler();
         if (Input.GetButton("Fire1"))
         {

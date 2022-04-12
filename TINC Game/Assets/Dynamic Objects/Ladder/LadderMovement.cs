@@ -41,17 +41,14 @@ public class LadderMovement : MonoBehaviour
             isLadder = true;
         }
     }
-    /* private void OnTriggerStay(Collider2D collision)
-     {
-         if(collision.CompareTag("Ladder"))
-         {
-             isLadder = true;
-         }
-     }*/
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        isLadder = false;
-        isClimbing = false;
+        if(collision.CompareTag("Ladder"))
+        {
+            isLadder = false;
+            isClimbing = false;
+        }
+        
     }
 }
