@@ -9,6 +9,7 @@ TagManager:
   - Ladder
   - checkpoint
   - Rocket
+  - Hazard
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - 
   - 
   - 
-  - Spikes
+  - Hazard
   - 
   - 
   - 
