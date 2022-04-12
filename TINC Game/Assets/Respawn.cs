@@ -53,7 +53,7 @@ public class Respawn : MonoBehaviour{
         }
 
          if (collison.tag == "checkpoint"){
-            respawnpoint = transform.position;
+            respawnpoint = new Vector3(collison.gameObject.transform.position.x - 1.25f, collison.gameObject.transform.position.y, transform.position.z);
         }
         
         
