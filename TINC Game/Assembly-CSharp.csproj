@@ -38,7 +38,9 @@
   <ItemGroup>
      <Compile Include="Assets\Dynamic Objects\Weapons\Rocket.cs" />
      <Compile Include="Assets\PlatformCheck.cs" />
+     <Compile Include="Assets\Enemy_Scuttler.cs" />
      <Compile Include="Assets\World Controller\Camera_Follow_Object.cs" />
+     <Compile Include="Assets\Explosion_Physics.cs" />
      <Compile Include="Assets\Dynamic Objects\Interaction_Cube\Interaction_Cube.cs" />
      <Compile Include="Assets\Dynamic Objects\Ladder\LadderMovement.cs" />
      <Compile Include="Assets\AudioManager.cs" />
@@ -56,8 +58,6 @@
      <Compile Include="Assets\Player_Controller.cs" />
      <Compile Include="Assets\World Controller\Game_Controller.cs" />
      <Compile Include="Assets\Weapon.cs" />
-     <Compile Include="Assets\Explosion_Physics.cs" />
-     <Compile Include="Assets\Enemy_Scuttler.cs" />
      <None Include="Assets\2DWeaponPack\Sprites\README.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.28f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
