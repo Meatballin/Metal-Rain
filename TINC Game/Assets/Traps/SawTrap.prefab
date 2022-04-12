@@ -250,6 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   is_immortal: 1
+  is_player: 0
   health: 100
   deathEffect: {fileID: 8240195757193755377, guid: 03618d01c90cc9449a0cb88e17a2dcc0, type: 3}
   collisionEffect: {fileID: 5141351578384621276, guid: 70551ca4c2cfe224881c66998fa881ef, type: 3}
@@ -279,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec301b99f22323498f0347efeb73905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hazardDamage: 50
+  hazardDamage: 100
 --- !u!114 &7598268376746150017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,4 +306,4 @@ MonoBehaviour:
   - {x: -0.7245, y: 0.72150004, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1088690
+  m_InstanceId: 176254

@@ -19,10 +19,12 @@ public class Respawn : MonoBehaviour{
     
     private SpriteRenderer checkpointsprite;
     public bool checkpointreached;
-    private Vector3 respawnpoint;
+    public Vector3 respawnpoint;
     public GameObject fallDetector;
 
-
+    public GameObject worldController;
+    public Camera worldCamera;
+    public GameObject weaponUI;
 
     void Start(){
         //detects the starting position of the player

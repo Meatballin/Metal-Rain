@@ -5,6 +5,7 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     public bool is_immortal = false;
+    public bool is_player = false;
     public float health = 100;
     public GameObject deathEffect;
     public GameObject collisionEffect;
@@ -56,7 +57,14 @@ public class Entity : MonoBehaviour
         if (deathEffect != null){
             Instantiate(deathEffect, transform.position, Quaternion.identity);
         }
-        Destroy(gameObject);
+        if (is_player == true){
+            transform.position = gameObject.GetComponent<Respawn>().respawnpoint;
+            health = 200f;
+        }
+        else{
+            Destroy(gameObject);
+        }
+        
     }
     
 }
