@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: addf82f16f7c43742982c6d165243a62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 120
-  damage: 40
+  speed: 100
+  damage: 10
   rb: {fileID: 5650424433014260062}
-  destroyEffect: {fileID: 7853511854988060698, guid: c2c97155cf6b24a46afe7c620ac3ac37, type: 3}
+  destroyEffect: {fileID: 5141351578384621276, guid: 70551ca4c2cfe224881c66998fa881ef, type: 3}

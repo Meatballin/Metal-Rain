@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1507177533203784380}
   - component: {fileID: 1507177533203784383}
   - component: {fileID: 1507177533203784382}
+  - component: {fileID: -6905374412686981237}
   m_Layer: 10
   m_Name: Smoke Piff
   m_TagString: Untagged
@@ -4804,3 +4805,15 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &-6905374412686981237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507177533203784377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9068cad3521db9844a69d4c0328cd828, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

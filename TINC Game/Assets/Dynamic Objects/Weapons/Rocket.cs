@@ -9,6 +9,7 @@ public class Rocket : MonoBehaviour
     public Rigidbody2D rb;
     
     public GameObject destroyEffect;
+    public GameObject impulseObject;
 
     // Start is called before the first frame update
     void Start()
@@ -26,33 +27,20 @@ public class Rocket : MonoBehaviour
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         // Entity integration
-        if (hitInfo.tag == "Shootable"){
+        if ((hitInfo.GetComponent<Entity>()  != null) && !((hitInfo.gameObject.layer == 8) || (hitInfo.gameObject.layer == 3))){
             Entity entity = hitInfo.GetComponent<Entity>();
-            if (entity != null)
-                {
-                    entity.ApplyDamage(damage);
-                    FindObjectOfType<AudioManager>().Play("RocketExplosion");
-                    if (destroyEffect != null){
-                        GameObject newExplosion = Instantiate(destroyEffect, gameObject.transform.position, Quaternion.identity);
-                        
-                    }
-                    Destroy(gameObject);
-                    
-                }
-        }
 
-        //Damage applied to enemy
-        Enemy enemy = hitInfo.GetComponent<Enemy>();
-        if (enemy != null)
-        {
-            enemy.TakeDamage(damage);
-        }
-        if (hitInfo.gameObject.layer == 9)
-        {
-
-            GameObject newExplosion = Instantiate(destroyEffect, gameObject.transform.position, Quaternion.identity);
+            entity.ApplyDamage(damage);
             FindObjectOfType<AudioManager>().Play("RocketExplosion");
+            if (destroyEffect != null){
+                GameObject newExplosion = Instantiate(destroyEffect, gameObject.transform.position, Quaternion.identity);
+                GameObject impulse = Instantiate(impulseObject, gameObject.transform.position, Quaternion.identity);
+                impulse.GetComponent<Explosion_Physics>().power = 3500f;
+                impulse.GetComponent<Explosion_Physics>().radius = 3.25f;
+            }
             Destroy(gameObject);
+            
+                
         }
 
 

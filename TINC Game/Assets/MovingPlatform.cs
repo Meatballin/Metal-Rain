@@ -36,7 +36,7 @@ public class MovingPlatform : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (parentCollision == true){
-            collision.transform.SetParent(transform);
+            collision.transform.SetParent(gameObject.transform.GetChild(0));
         }
     }
 

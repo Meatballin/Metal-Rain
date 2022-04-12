@@ -62,7 +62,7 @@ public class Enemy_Scuttler : MonoBehaviour{
 
     // Checks if there is an object below the player that they may jump off of
     bool IsGrounded() {
-        return Physics2D.BoxCast(selfBody.position + (new Vector2(0,-1.0625f)), new Vector2(1,0.125f), 0.0f, new Vector2(0, 0), 0.0f, Traverseable_Layers);
+        return Physics2D.BoxCast(selfBody.position + (new Vector2(0,-0.75f)), new Vector2(1,0.125f), 0.0f, new Vector2(0, 0), 0.0f, Traverseable_Layers);
     }
 
     // Update is called once per frame
@@ -164,7 +164,6 @@ public class Enemy_Scuttler : MonoBehaviour{
                 attackTick += 1;
                 if (attackTick >= attackSpeed){
                     attackTick = 0;
-                    Debug.Log("Player Attacked!");
                     Player.gameObject.GetComponent<Entity>().ApplyDamage(attackDamage);
                     if (attackEffect != null){
                         Instantiate(attackEffect, Player.transform.position, Quaternion.identity);
@@ -180,7 +179,7 @@ public class Enemy_Scuttler : MonoBehaviour{
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position + (new Vector3(0,-1.0625f,0)), new Vector2(1,0.125f));
+        Gizmos.DrawWireCube(transform.position + (new Vector3(0,-0.75f,0)), new Vector2(1,0.125f));
         // Attack range
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, attackRange);

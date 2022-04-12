@@ -21,11 +21,20 @@ public class Pellet : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (hitInfo.tag == "Shootable")
-        {
+        // Entity integration
+        if (hitInfo.tag == "Shootable"){
             Entity entity = hitInfo.GetComponent<Entity>();
+            if (entity != null)
+                {
+                    entity.ApplyDamage(damage);
+                    FindObjectOfType<AudioManager>().Play("RifleBulletHit");
+                    if (destroyEffect != null){
+                        GameObject newExplosion = Instantiate(destroyEffect, gameObject.transform.position, Quaternion.identity);
+                        
+                    }
+                    Destroy(gameObject);
+                }
         }
-
 
         //Damage applied to enemy
         Enemy enemy = hitInfo.GetComponent<Enemy>();

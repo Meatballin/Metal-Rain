@@ -13,13 +13,18 @@ public class Explosion_Physics : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(explosionPos, radius);
         foreach (Collider2D hit in colliders)
         {
-            Rigidbody2D rb = hit.GetComponent<Rigidbody2D>();
+            if (hit.gameObject.GetComponent<Rigidbody2D>() != null){
+                Rigidbody2D rb = hit.GetComponent<Rigidbody2D>();
 
-            Vector2 explosion_dir = new Vector2(rb.position.x - transform.position.x, rb.position.y - transform.position.y);
-            explosion_dir.Normalize();
+                Vector2 explosion_dir = new Vector2(rb.position.x - transform.position.x, rb.position.y - transform.position.y);
+                explosion_dir.Normalize();
 
-            if (rb != null)
-                rb.AddForce(explosion_dir * power);
+                if (rb != null){
+                    rb.AddForce(explosion_dir * power);
+                }
+            }
+            
+                
         }
         Destroy(gameObject);
     }
