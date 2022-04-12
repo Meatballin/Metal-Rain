@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Hazard_Collision : MonoBehaviour
 {
-    public float hazardDamage = 1;
+    public float hazardDamage = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,7 @@ public class Hazard_Collision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnCollisionEnter2D(Collision2D collision){

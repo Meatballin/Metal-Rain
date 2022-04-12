@@ -43,6 +43,7 @@
      <Compile Include="Assets\Dynamic Objects\Ladder\LadderMovement.cs" />
      <Compile Include="Assets\ObjectRotate.cs" />
      <Compile Include="Assets\AudioManager.cs" />
+     <Compile Include="Assets\Hazard_Collision.cs" />
      <Compile Include="Assets\Enemy.cs" />
      <Compile Include="Assets\MovingPlatform.cs" />
      <Compile Include="Assets\SFX\Particle_Auto_Destroy.cs" />
@@ -59,7 +60,6 @@
      <Compile Include="Assets\Player_Controller.cs" />
      <Compile Include="Assets\World Controller\Game_Controller.cs" />
      <Compile Include="Assets\Weapon.cs" />
-     <Compile Include="Assets\Hazard_Collision.cs" />
      <None Include="Assets\2DWeaponPack\Sprites\README.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.28f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
