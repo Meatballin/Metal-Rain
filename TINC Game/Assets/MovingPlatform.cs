@@ -7,6 +7,7 @@ public class MovingPlatform : MonoBehaviour
     public float speed;
     public int startPoint;
     public Transform[] points;  //array of transform points where the platform needs to move
+    public bool parentCollision = true;
 
     private int i; //index of the array
 
@@ -34,12 +35,16 @@ public class MovingPlatform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        collision.transform.SetParent(transform);
+        if (parentCollision == true){
+            collision.transform.SetParent(transform);
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        collision.transform.SetParent(null);
+        if (parentCollision == true){
+            collision.transform.SetParent(null);
+        }
     }
 
 }
