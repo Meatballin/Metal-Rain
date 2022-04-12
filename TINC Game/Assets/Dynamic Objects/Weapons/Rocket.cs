@@ -6,6 +6,8 @@ public class Rocket : MonoBehaviour
 {
     public float speed = 120f;
     public int damage = 70;
+    public float explosionPower = 3500f;
+    public float explosionRadius = 3.25f;
     public Rigidbody2D rb;
     
     public GameObject destroyEffect;
@@ -35,8 +37,8 @@ public class Rocket : MonoBehaviour
             if (destroyEffect != null){
                 GameObject newExplosion = Instantiate(destroyEffect, gameObject.transform.position, Quaternion.identity);
                 GameObject impulse = Instantiate(impulseObject, gameObject.transform.position, Quaternion.identity);
-                impulse.GetComponent<Explosion_Physics>().power = 3500f;
-                impulse.GetComponent<Explosion_Physics>().radius = 3.25f;
+                impulse.GetComponent<Explosion_Physics>().power = explosionPower;
+                impulse.GetComponent<Explosion_Physics>().radius = explosionRadius;
             }
             Destroy(gameObject);
             
