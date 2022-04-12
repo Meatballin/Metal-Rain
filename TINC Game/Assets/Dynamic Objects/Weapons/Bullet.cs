@@ -24,8 +24,18 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D hitInfo)
     {
+        // Entity integration
         if (hitInfo.tag == "Shootable"){
             Entity entity = hitInfo.GetComponent<Entity>();
+            if (entity != null)
+                {
+                    entity.ApplyDamage(damage);
+                    if (destroyEffect != null){
+                        GameObject newExplosion = Instantiate(destroyEffect, gameObject.transform.position, Quaternion.identity);
+                        
+                    }
+                    Destroy(gameObject);
+                }
         }
 
 

@@ -232,11 +232,6 @@ MonoBehaviour:
   rifleMuzzleFlash: {fileID: 0}
   bulletPrefab: {fileID: 6796596435308922163, guid: 432e522ba8d19ed42b3851bdfc341cfc, type: 3}
   rocketPrefab: {fileID: 7845095633634102873, guid: e30e312bc7d74c146889f3c589003d08, type: 3}
-  firePoint: {fileID: 8672851977392324655}
-  gameCamera: {fileID: 0}
-  rifleMuzzleFlash: {fileID: 0}
-  bulletPrefab: {fileID: 0}
-  rocketPrefab: {fileID: 0}
 --- !u!114 &-6943357675863013216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,10 +244,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91135db9d75220f428c9841b68f0a258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  is_immortal: 1
+  is_immortal: 0
   health: 100
   deathEffect: {fileID: 8240195757193755377, guid: 03618d01c90cc9449a0cb88e17a2dcc0, type: 3}
-  impactResistance: 0
+  collisionEffect: {fileID: 0}
+  impactResistance: 20
 --- !u!1 &3071516735040807152
 GameObject:
   m_ObjectHideFlags: 0
