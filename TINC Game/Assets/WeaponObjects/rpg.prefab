@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7169930988653925892}
   - component: {fileID: 7169930988653925893}
   - component: {fileID: 7169930988653925914}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: rpg
-  m_TagString: Untagged
+  m_TagString: RPG
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,7 +123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 705023693974658984, guid: 1a0948a4422463b4e8d2ed47618fe7bf, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 705023693974658986, guid: 1a0948a4422463b4e8d2ed47618fe7bf, type: 3}
       propertyPath: m_RootOrder

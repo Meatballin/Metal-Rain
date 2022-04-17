@@ -11,6 +11,10 @@ TagManager:
   - Rocket
   - Shootable
   - Hazard
+  - M4
+  - RPG
+  - Shotgun
+  - Grenade
   layers:
   - Default
   - TransparentFX
