@@ -46,7 +46,7 @@ public class Bullet : MonoBehaviour
         {
             enemy.TakeDamage(damage);
         }
-        if(hitInfo.gameObject.layer == 9)
+        if(hitInfo.gameObject.CompareTag("Shootable"))
         {
             GameObject newExplosion = Instantiate(destroyEffect, gameObject.transform.position, Quaternion.identity);
             FindObjectOfType<AudioManager>().Play("RifleBulletHit");

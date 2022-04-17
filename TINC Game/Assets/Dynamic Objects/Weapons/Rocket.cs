@@ -9,7 +9,7 @@ public class Rocket : MonoBehaviour
     public float explosionPower = 3500f;
     public float explosionRadius = 3.25f;
     public Rigidbody2D rb;
-    
+
     public GameObject destroyEffect;
     public GameObject impulseObject;
 
@@ -28,23 +28,43 @@ public class Rocket : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        // Entity integration
-        if ((hitInfo.GetComponent<Entity>()  != null) && !((hitInfo.gameObject.layer == 8) || (hitInfo.gameObject.layer == 3))){
-            Entity entity = hitInfo.GetComponent<Entity>();
 
-            entity.ApplyDamage(damage);
-            FindObjectOfType<AudioManager>().Play("RocketExplosion");
-            if (destroyEffect != null){
-                GameObject newExplosion = Instantiate(destroyEffect, gameObject.transform.position, Quaternion.identity);
-                GameObject impulse = Instantiate(impulseObject, gameObject.transform.position, Quaternion.identity);
-                impulse.GetComponent<Explosion_Physics>().power = explosionPower;
-                impulse.GetComponent<Explosion_Physics>().radius = explosionRadius;
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 3.25f);
+
+        // AOE damage integration
+        if ((hitInfo.GetComponent<Entity>() != null) && !((hitInfo.gameObject.layer == 8) || (hitInfo.gameObject.layer == 3)))
+        {
+
+            foreach (Collider2D enemies in hits)
+            {
+                if (enemies.tag == "Shootable")
+                {
+                    Entity entity = enemies.gameObject.GetComponent<Entity>();
+                    entity.ApplyDamage(damage);
+                }
+
+
             }
-            Destroy(gameObject);
-            
-                
+            // Entity integration
+            if ((hitInfo.GetComponent<Entity>() != null) && !((hitInfo.gameObject.layer == 8) || (hitInfo.gameObject.layer == 3)))
+            {
+                Entity entity = hitInfo.GetComponent<Entity>();
+
+                entity.ApplyDamage(damage);
+                FindObjectOfType<AudioManager>().Play("RocketExplosion");
+                if (destroyEffect != null)
+                {
+                    GameObject newExplosion = Instantiate(destroyEffect, gameObject.transform.position, Quaternion.identity);
+                    GameObject impulse = Instantiate(impulseObject, gameObject.transform.position, Quaternion.identity);
+                    impulse.GetComponent<Explosion_Physics>().power = explosionPower;
+                    impulse.GetComponent<Explosion_Physics>().radius = explosionRadius;
+                }
+                Destroy(gameObject);
+
+
+            }
+
+
         }
-
-
     }
 }

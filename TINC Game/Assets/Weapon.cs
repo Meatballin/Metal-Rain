@@ -42,6 +42,12 @@ public class Weapon : MonoBehaviour
     private float grenadeThrowRate = 0.75f;
     public GameObject grenadePrefab;
 
+    //Animation
+    public Animator DesertEagleAnimator;
+    public Animator M4Animator;
+    public Animator RPGAnimator;
+    public Animator ShotgunAnimator;
+
     private void Start()
     {
         
@@ -148,11 +154,7 @@ public class Weapon : MonoBehaviour
         
         currentWeapon = 0;
         weapons[0] = true;
-        /*weapons[1] = false;
-        weapons[2] = false;
-        weapons[3] = false;
-        weapons[4] = false;*/
-
+        
         for(int i = 0; i < totalNumWeapons; i++)
         {
             weapons[i] = false;
@@ -185,6 +187,7 @@ public class Weapon : MonoBehaviour
     {
         if (Time.time > deagleFireRate + lastShot)
         {
+            DesertEagleAnimator.SetTrigger("Shoot");
             FindObjectOfType<AudioManager>().Play("DeagleSound");
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             lastShot = Time.time;
@@ -201,6 +204,7 @@ public class Weapon : MonoBehaviour
         if (Time.time > rifleFireRate + lastShot)
         {
             FindObjectOfType<AudioManager>().Play("RifleBulletSound");
+            M4Animator.SetTrigger("Shoot");
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             lastShot = Time.time;
 
@@ -220,7 +224,6 @@ public class Weapon : MonoBehaviour
         if (Input.GetButton("Fire1"))
         {
             RifleShoot();
-
             if (!isFlashing)
                 StartCoroutine(RifleMuzzleFlash());
             
@@ -251,7 +254,7 @@ public class Weapon : MonoBehaviour
     {
         if (Time.time > rpgFireRate + lastShot)
         {
-
+            RPGAnimator.SetTrigger("Shoot");
             Instantiate(rocketPrefab, firePoint.position, firePoint.rotation);
             FindObjectOfType<AudioManager>().Play("RocketLaunch");
             /*source.PlayOneShot(rocketSound);*/
@@ -286,6 +289,7 @@ public class Weapon : MonoBehaviour
             int bulletCount = 7;
             Quaternion newRotation = firePoint.rotation;
             float spread = 1;
+            ShotgunAnimator.SetTrigger("Shoot");
             FindObjectOfType<AudioManager>().Play("ShotgunSound");
             for (int i = 0; i < bulletCount; i++)
             {
@@ -326,9 +330,8 @@ public class Weapon : MonoBehaviour
     {
         if (Time.time > grenadeThrowRate + lastShot)
         {
-
+            
             Instantiate(grenadePrefab, firePoint.position, firePoint.rotation);
-            //FindObjectOfType<AudioManager>().Play("RocketLaunch");
             lastShot = Time.time;
 
         }
