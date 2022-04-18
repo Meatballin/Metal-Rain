@@ -98,10 +98,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 33
-  damage: 70
+  damage: 75
   explosionPower: 3500
   explosionRadius: 3.25
   rb: {fileID: -3563997873692754893}
+  bounceNumber: 0
   destroyEffect: {fileID: 7853511854988060698, guid: c2c97155cf6b24a46afe7c620ac3ac37, type: 3}
   impulseObject: {fileID: 2779372367291317033, guid: bd91490133a30e247a5d572bf9022ac3, type: 3}
 --- !u!50 &-3563997873692754893

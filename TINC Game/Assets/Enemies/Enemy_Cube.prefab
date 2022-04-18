@@ -159,7 +159,7 @@ MonoBehaviour:
   - {x: -0.5, y: 0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -145836
+  m_InstanceId: 38894
 --- !u!114 &659536747561274819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   is_immortal: 0
+  is_player: 0
   health: 40
   deathEffect: {fileID: 9030186551747376915, guid: 48cfb57ff40b82b46843f841f36eac59, type: 3}
   collisionEffect: {fileID: 9030186551747376915, guid: 48cfb57ff40b82b46843f841f36eac59, type: 3}

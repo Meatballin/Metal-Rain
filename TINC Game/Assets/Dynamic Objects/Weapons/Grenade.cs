@@ -29,24 +29,32 @@ public class Grenade : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 3.25f);
-       
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 3.5f);
+        int count = 0;
         // AOE damage integration
         if ((hitInfo.GetComponent<Entity>() != null) && !((hitInfo.gameObject.layer == 8) || (hitInfo.gameObject.layer == 3)))
         {
 
             foreach (Collider2D enemies in hits)
             {
-                if (enemies.tag == "Shootable")
+                //First entity that is hit will take full damage.
+                //Anything after is splash damage (half)
+                if (enemies.CompareTag("Shootable") && count == 0)
                 {
                     Entity entity = enemies.gameObject.GetComponent<Entity>();
                     entity.ApplyDamage(damage);
                 }
-                
+                //Splash damage to anything that isn't directly hit
+                if (enemies.CompareTag("Shootable") && count != 0)
+                {
+                    Entity entity = enemies.gameObject.GetComponent<Entity>();
+                    entity.ApplyDamage(damage / 2);
+                }
+                count++;
 
             }
-            
-           
+
+
             FindObjectOfType<AudioManager>().Play("RocketExplosion");
 
             if (destroyEffect != null)
