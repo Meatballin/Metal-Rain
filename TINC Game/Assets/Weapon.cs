@@ -47,6 +47,7 @@ public class Weapon : MonoBehaviour
     public Animator M4Animator;
     public Animator RPGAnimator;
     public Animator ShotgunAnimator;
+    public Animator MuzzleFlash;
 
     private void Start()
     {
@@ -160,8 +161,7 @@ public class Weapon : MonoBehaviour
             weapons[i] = false;
         }
 
-        //Makes sure muzzle flash is off on game start
-        rifleMuzzleFlash.SetActive(false);
+        
     }
 
     //DEAGLE CODE
@@ -205,6 +205,7 @@ public class Weapon : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Play("RifleBulletSound");
             M4Animator.SetTrigger("Shoot");
+            
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             lastShot = Time.time;
 
@@ -223,13 +224,17 @@ public class Weapon : MonoBehaviour
         AimHandler();
         if (Input.GetButton("Fire1"))
         {
+            MuzzleFlash.ResetTrigger("NotShooting");
+            MuzzleFlash.SetTrigger("Shooting");
             RifleShoot();
-            if (!isFlashing)
-                StartCoroutine(RifleMuzzleFlash());
-            
 
         }
-        
+        if (Input.GetButtonUp("Fire1"))
+        {
+            MuzzleFlash.ResetTrigger("Shooting");
+            MuzzleFlash.SetTrigger("NotShooting");
+        }
+
     }
     //======================================================================================
 
@@ -374,7 +379,7 @@ public class Weapon : MonoBehaviour
 
   
 
-    //Muzzle Flash for Rifle Animation
+    /*//Muzzle Flash for Rifle Animation
     IEnumerator RifleMuzzleFlash()
     {
         rifleMuzzleFlash.SetActive(true);
@@ -388,7 +393,7 @@ public class Weapon : MonoBehaviour
         rifleMuzzleFlash.SetActive(false);
         isFlashing = false;
         
-    }
+    }*/
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
