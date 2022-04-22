@@ -11,6 +11,8 @@ TagManager:
   - Rocket
   - Shootable
   - Hazard
+  - Bar
+  - Heart
   layers:
   - Default
   - TransparentFX
