@@ -11,8 +11,7 @@ public class Weapon : MonoBehaviour
     public Transform firePoint;
     public Camera gameCamera;
     private int currentWeapon;
-    
-
+   
     public GameObject weaponUI;
 
     //Array of booleans to handle weapon pickups
@@ -58,6 +57,7 @@ public class Weapon : MonoBehaviour
     private void Awake()
     {
         initializeWepScene();
+        
     }
     
     // Update is called once per frame
@@ -65,8 +65,9 @@ public class Weapon : MonoBehaviour
     {
         //Function to handle weapon swapping
         weaponSwaps();
+        AnimHandler();
         //Handles which weapon we have equipped
-        switch(currentWeapon)
+        switch (currentWeapon)
         {
             case 0:
                 DeagleProfile();
@@ -146,6 +147,29 @@ public class Weapon : MonoBehaviour
         }
     }
 
+    //Animation Handler
+    private void AnimHandler()
+    {
+        //Deals with m4 muzzle flash animation
+        if(Input.GetButton("Fire1") && weapons[1])
+        {
+            rifleMuzzleFlash.SetActive(true);
+            MuzzleFlash.ResetTrigger("NotShooting");
+            MuzzleFlash.SetTrigger("Shooting");
+        }
+        
+        //Deals with turning off Muzzle Flash animation possibly for all weapons
+        if (Input.GetButtonUp("Fire1"))
+        {
+            if(weapons[1])
+            {
+                rifleMuzzleFlash.SetActive(false);
+                MuzzleFlash.ResetTrigger("Shooting");
+                MuzzleFlash.SetTrigger("NotShooting");
+            }
+           
+        }
+    }
     //sets up our boolean array for weapon handling
     private void initializeWepScene()
     {
@@ -169,6 +193,7 @@ public class Weapon : MonoBehaviour
     private void DeagleProfile()
     {
         //Turns off M4 and brings in RPG
+        
         transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
         transform.GetChild(1).GetChild(1).gameObject.SetActive(false);
         transform.GetChild(1).GetChild(2).gameObject.SetActive(false);
@@ -215,6 +240,8 @@ public class Weapon : MonoBehaviour
 
     private void RifleProfile()
     {
+        
+        
         transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
         transform.GetChild(1).GetChild(1).gameObject.SetActive(true);
         transform.GetChild(1).GetChild(2).gameObject.SetActive(false);
@@ -222,18 +249,16 @@ public class Weapon : MonoBehaviour
         transform.GetChild(1).GetChild(4).gameObject.SetActive(false);
 
         AimHandler();
+        
+        //Deals with Muzzle Flash animation
         if (Input.GetButton("Fire1"))
         {
-            MuzzleFlash.ResetTrigger("NotShooting");
-            MuzzleFlash.SetTrigger("Shooting");
+            
             RifleShoot();
 
         }
-        if (Input.GetButtonUp("Fire1"))
-        {
-            MuzzleFlash.ResetTrigger("Shooting");
-            MuzzleFlash.SetTrigger("NotShooting");
-        }
+        
+        
 
     }
     //======================================================================================
@@ -243,6 +268,7 @@ public class Weapon : MonoBehaviour
     private void RPGProfile()
     {
         //Turns off M4 and brings in RPG
+        
         transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
         transform.GetChild(1).GetChild(1).gameObject.SetActive(false);
         transform.GetChild(1).GetChild(2).gameObject.SetActive(true);
@@ -262,7 +288,6 @@ public class Weapon : MonoBehaviour
             RPGAnimator.SetTrigger("Shoot");
             Instantiate(rocketPrefab, firePoint.position, firePoint.rotation);
             FindObjectOfType<AudioManager>().Play("RocketLaunch");
-            /*source.PlayOneShot(rocketSound);*/
             lastShot = Time.time;
             
         }
@@ -274,6 +299,7 @@ public class Weapon : MonoBehaviour
     //======================================================================================
     private void ShotgunProfile()
     {
+        
         transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
         transform.GetChild(1).GetChild(1).gameObject.SetActive(false);
         transform.GetChild(1).GetChild(2).gameObject.SetActive(false);
@@ -315,6 +341,7 @@ public class Weapon : MonoBehaviour
     private void GrenadeProfile()
     {
         //Turns off M4 and brings in RPG
+        
         transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
         transform.GetChild(1).GetChild(1).gameObject.SetActive(false);
         transform.GetChild(1).GetChild(2).gameObject.SetActive(false);
@@ -374,26 +401,6 @@ public class Weapon : MonoBehaviour
         Vector3 worldPosition = worldCamera.ScreenToWorldPoint(screenPosition);
         return worldPosition;
     }
-
-   
-
-  
-
-    /*//Muzzle Flash for Rifle Animation
-    IEnumerator RifleMuzzleFlash()
-    {
-        rifleMuzzleFlash.SetActive(true);
-        framesFlashed = 0f;
-        isFlashing = true;
-        while(framesFlashed <= maxFlashFrames)
-        {
-            framesFlashed++;
-            yield return null;
-        }
-        rifleMuzzleFlash.SetActive(false);
-        isFlashing = false;
-        
-    }*/
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
