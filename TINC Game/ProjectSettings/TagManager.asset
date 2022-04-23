@@ -15,6 +15,7 @@ TagManager:
   - RPG
   - Shotgun
   - Grenade
+  - HealthPack
   layers:
   - Default
   - TransparentFX
