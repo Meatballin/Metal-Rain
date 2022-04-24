@@ -21,8 +21,6 @@ public class Respawn : MonoBehaviour{
     public Camera worldCamera;
     public GameObject weaponUI;
     public GameObject hearts;
-    public Vector3 begining;
-
     public LevelManager levelManager;
    
     void Start(){
@@ -52,6 +50,7 @@ public class Respawn : MonoBehaviour{
         
         if (collison.tag == "FallDetector"){
             levelManager.Respawn();
+           
         }
 
          if (collison.tag == "checkpoint"){
