@@ -50,6 +50,11 @@ public class Enemy_Scuttler : MonoBehaviour{
     public float attackTick = 0f;
     public float chaseRadius = 10f;
 
+    public bool shoots_bullets = false;
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+    public float bullet_speed = 2000f;
+
     // Start is called before the first frame update
     void Start(){
         selfBody = gameObject.GetComponent<Rigidbody2D>();
@@ -164,10 +169,23 @@ public class Enemy_Scuttler : MonoBehaviour{
                 attackTick += 1;
                 if (attackTick >= attackSpeed){
                     attackTick = 0;
-                    Player.gameObject.GetComponent<Entity>().ApplyDamage(attackDamage);
-                    if (attackEffect != null){
+                    if (shoots_bullets == false){
+                        firePoint.transform.position =gameObject.transform.position;
+                        Player.gameObject.GetComponent<Entity>().ApplyDamage(attackDamage);
+                        if (attackEffect != null){
                         Instantiate(attackEffect, Player.transform.position, Quaternion.identity);
+                        }
+                        
                     }
+                    else{
+                        Vector2 targetDir = (Player.transform.position - gameObject.transform.position).normalized;
+                        Vector2 fire_offset = new Vector2(targetDir.x*1f, targetDir.y*1f);
+                        firePoint.transform.position = new Vector2(gameObject.transform.position.x + fire_offset.x, gameObject.transform.position.y + fire_offset.y);
+
+                        GameObject fired_bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+                        fired_bullet.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(targetDir.x*bullet_speed, targetDir.y*bullet_speed));
+                    }
+                    
                 }
             }
         }
