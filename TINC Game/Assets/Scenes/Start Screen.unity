@@ -260,7 +260,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1973301302142241770, guid: 143c90997e331794d99644eb62ee2e7a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 143c90997e331794d99644eb62ee2e7a, type: 3}
 --- !u!1001 &983826062
 PrefabInstance:
@@ -420,7 +421,7 @@ GameObject:
   - component: {fileID: 2136866765}
   - component: {fileID: 2136866764}
   m_Layer: 0
-  m_Name: Matal Rain 2
+  m_Name: Matal Rain X
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
