@@ -18,7 +18,7 @@ public class Press_Start : MonoBehaviour
     {
         tick += 1;
 
-        if (tick > 450){
+        if (tick > 40){
             tick = 0;
             if (gameObject.GetComponent<SpriteRenderer>().enabled == false){
                 gameObject.GetComponent<SpriteRenderer>().enabled = true;
