@@ -43,12 +43,15 @@
      <Compile Include="Assets\pendulum.cs" />
      <Compile Include="Assets\World Controller\Camera_Follow_Object.cs" />
      <Compile Include="Assets\Explosion_Physics.cs" />
+     <Compile Include="Assets\LevelManager.cs" />
      <Compile Include="Assets\Dynamic Objects\Interaction_Cube\Interaction_Cube.cs" />
+     <Compile Include="Assets\HealthBar.cs" />
      <Compile Include="Assets\TurretBullet.cs" />
      <Compile Include="Assets\Dynamic Objects\Ladder\LadderMovement.cs" />
      <Compile Include="Assets\ObjectRotate.cs" />
      <Compile Include="Assets\Dynamic Objects\Weapons\Pellet.cs" />
      <Compile Include="Assets\HealthPack.cs" />
+     <Compile Include="Assets\Bullet_Enemy.cs" />
      <Compile Include="Assets\AudioManager.cs" />
      <Compile Include="Assets\Hazard_Collision.cs" />
      <Compile Include="Assets\crusher.cs" />
@@ -57,6 +60,7 @@
      <Compile Include="Assets\MovingPlatform.cs" />
      <Compile Include="Assets\SFX\Particle_Auto_Destroy.cs" />
      <Compile Include="Assets\Entity.cs" />
+     <Compile Include="Assets\Lives.cs" />
      <Compile Include="Assets\Dynamic Objects\JumpPads\JumpPadSmall.cs" />
      <Compile Include="Assets\Dynamic Objects\Weapons\Grenade.cs" />
      <Compile Include="Assets\Dynamic Objects\JumpPads\JumpPadMedium.cs" />
@@ -65,15 +69,18 @@
      <Compile Include="Assets\Respawn.cs" />
      <Compile Include="Assets\Dynamic Objects\JumpPads\JumpPadLarge.cs" />
      <Compile Include="Assets\Sound.cs" />
-     <Compile Include="Assets\PlayerHealthBar.cs" />
      <Compile Include="Assets\sprite muzzle flashes\AnimatedTexture.cs" />
      <Compile Include="Assets\TurretBullet\Tbullet_destroy.cs" />
-     <Compile Include="Assets\HealthbarBehaviour.cs" />
      <Compile Include="Assets\Player_Controller.cs" />
      <Compile Include="Assets\FinishLine.cs" />
      <Compile Include="Assets\World Controller\Game_Controller.cs" />
+     <Compile Include="Assets\AddHeart.cs" />
      <Compile Include="Assets\Weapon.cs" />
-     <Compile Include="Assets\Bullet_Enemy.cs" />
+     <Compile Include="Assets\TheMan.cs" />
+     <Compile Include="Assets\DestroyBond.cs" />
+     <Compile Include="Assets\Press_Start.cs" />
+     <Compile Include="Assets\Try_Again.cs" />
+     <Compile Include="Assets\Initial_Game_Load.cs" />
      <None Include="Assets\2DWeaponPack\Sprites\README.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.28f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

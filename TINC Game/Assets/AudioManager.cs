@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
             instance = this;
         else
         {
+            Debug.Log("IM DEADDDDD");
             Destroy(gameObject);
             return;
         }
@@ -35,7 +36,7 @@ public class AudioManager : MonoBehaviour
     }
 
     void Start(){
-        Play("Theme_Music_1");
+        
     }
 
 }

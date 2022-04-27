@@ -67,7 +67,7 @@ public class Lives : MonoBehaviour
                    Heart4.gameObject.SetActive(false);
                    Heart5.gameObject.SetActive(false);
                    Heart6.gameObject.SetActive(false);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                SceneManager.LoadScene("Game Over Screen");
                 break;
 
         }
