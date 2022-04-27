@@ -6,6 +6,11 @@ public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
     public static AudioManager instance;
+
+    private void Start()
+    {
+        Play("Theme1");
+    }
     private void Awake()
     {
         if (instance == null)
@@ -24,6 +29,7 @@ public class AudioManager : MonoBehaviour
 
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
+            s.source.loop = s.loop;
         }
     }
 
