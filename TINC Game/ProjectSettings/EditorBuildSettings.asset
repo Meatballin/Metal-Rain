@@ -20,4 +20,19 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Shane_Scene.unity
     guid: 93f6fb351ae9a254d9531e12544d9157
+  - enabled: 1
+    path: Assets/Scenes/Level_1.unity
+    guid: a3c59b3176367b848bfad92e68336b91
+  - enabled: 1
+    path: Assets/Scenes/Level_2.unity
+    guid: 56f35b9a813f85d47bc90789a94453a2
+  - enabled: 1
+    path: Assets/Scenes/Game Over Screen.unity
+    guid: 138f4dad0e20e4b45907a4846495acec
+  - enabled: 1
+    path: Assets/Scenes/INITIAL_GAME_LOAD.unity
+    guid: d8893973c2d346b4885f52c8cc57ee68
+  - enabled: 1
+    path: Assets/Scenes/Start Screen.unity
+    guid: 5030d1b8338a80f428091816a100f473
   m_configObjects: {}

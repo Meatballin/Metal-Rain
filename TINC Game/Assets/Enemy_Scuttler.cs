@@ -67,7 +67,7 @@ public class Enemy_Scuttler : MonoBehaviour{
 
     // Checks if there is an object below the player that they may jump off of
     bool IsGrounded() {
-        return Physics2D.BoxCast(selfBody.position + (new Vector2(0,-0.75f)), new Vector2(1,0.125f), 0.0f, new Vector2(0, 0), 0.0f, Traverseable_Layers);
+        return Physics2D.BoxCast(selfBody.position + (new Vector2(0,-0.75f*gameObject.transform.localScale.y)), new Vector2(1*gameObject.transform.localScale.x,0.125f*gameObject.transform.localScale.y), 0.0f, new Vector2(0, 0), 0.0f, Traverseable_Layers);
     }
 
     // Update is called once per frame
@@ -179,7 +179,7 @@ public class Enemy_Scuttler : MonoBehaviour{
                     }
                     else{
                         Vector2 targetDir = (Player.transform.position - gameObject.transform.position).normalized;
-                        Vector2 fire_offset = new Vector2(targetDir.x*1f, targetDir.y*1f);
+                        Vector2 fire_offset = new Vector2(targetDir.x*1f*gameObject.transform.localScale.x, targetDir.y*1f*gameObject.transform.localScale.y);
                         firePoint.transform.position = new Vector2(gameObject.transform.position.x + fire_offset.x, gameObject.transform.position.y + fire_offset.y);
 
                         GameObject fired_bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
@@ -198,7 +198,7 @@ public class Enemy_Scuttler : MonoBehaviour{
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position + (new Vector3(0,-0.75f,0)), new Vector2(1,0.125f));
+        Gizmos.DrawWireCube(transform.position + (new Vector3(0,-0.75f*gameObject.transform.localScale.y,0)), new Vector2(1*gameObject.transform.localScale.x,0.125f*gameObject.transform.localScale.y));
         // Attack range
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, attackRange);
