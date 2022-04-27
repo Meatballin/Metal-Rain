@@ -164,7 +164,7 @@ MonoBehaviour:
   - {x: -0.5, y: 0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 73300
+  m_InstanceId: 29656
 --- !u!114 &5005808414121561281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +208,11 @@ MonoBehaviour:
   rocketPrefab: {fileID: 7845095633634102873, guid: e30e312bc7d74c146889f3c589003d08, type: 3}
   pellet: {fileID: 0}
   grenadePrefab: {fileID: 0}
+  DesertEagleAnimator: {fileID: 0}
+  M4Animator: {fileID: 0}
+  RPGAnimator: {fileID: 0}
+  ShotgunAnimator: {fileID: 0}
+  MuzzleFlash: {fileID: 0}
 --- !u!114 &8633866317476200743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,6 +556,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9045034667450281385, guid: 885f69f3cbddee849ba01f1428ba8df8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 9045034667450281387, guid: 885f69f3cbddee849ba01f1428ba8df8, type: 3}
       propertyPath: m_IsActive
       value: 0

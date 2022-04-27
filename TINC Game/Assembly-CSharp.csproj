@@ -48,6 +48,7 @@
      <Compile Include="Assets\Dynamic Objects\Ladder\LadderMovement.cs" />
      <Compile Include="Assets\ObjectRotate.cs" />
      <Compile Include="Assets\Dynamic Objects\Weapons\Pellet.cs" />
+     <Compile Include="Assets\HealthPack.cs" />
      <Compile Include="Assets\AudioManager.cs" />
      <Compile Include="Assets\Hazard_Collision.cs" />
      <Compile Include="Assets\crusher.cs" />
@@ -57,6 +58,7 @@
      <Compile Include="Assets\SFX\Particle_Auto_Destroy.cs" />
      <Compile Include="Assets\Entity.cs" />
      <Compile Include="Assets\Dynamic Objects\JumpPads\JumpPadSmall.cs" />
+     <Compile Include="Assets\Dynamic Objects\Weapons\Grenade.cs" />
      <Compile Include="Assets\Dynamic Objects\JumpPads\JumpPadMedium.cs" />
      <Compile Include="Assets\Dynamic Objects\Weapons\Bullet.cs" />
      <Compile Include="Assets\TurretBullet\Turret.cs" />
