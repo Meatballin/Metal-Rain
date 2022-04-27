@@ -13,7 +13,7 @@ public class Turret : MonoBehaviour
     public float FireRate;
     float nextTimeToFire = 0;
     public Transform Shootpoint;
-    public float Force;
+    public float Force = 10f;
 
     // Start is called before the first frame update
     void Start()

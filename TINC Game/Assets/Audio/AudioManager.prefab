@@ -48,29 +48,47 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 6dc3228da116b8a4995df53943ffebd7, type: 3}
     volume: 0.26
     pitch: 1
+    loop: 0
     source: {fileID: 0}
   - name: RifleBulletHit
     clip: {fileID: 8300000, guid: bd231fbd0fc2f7342b3156c31c3eea20, type: 3}
     volume: 0.249
     pitch: 1
+    loop: 0
     source: {fileID: 0}
   - name: RocketLaunch
     clip: {fileID: 8300000, guid: 5bfc92569ca1bea45ac830b0ad2839d2, type: 3}
     volume: 0.1
     pitch: 1
+    loop: 0
     source: {fileID: 0}
   - name: RocketExplosion
     clip: {fileID: 8300000, guid: 475343720d00def44a33689f9e4f37d4, type: 3}
     volume: 0.1
     pitch: 1
+    loop: 0
     source: {fileID: 0}
   - name: DeagleSound
     clip: {fileID: 8300000, guid: 9906f5e9b5ba01c4f8c6fc547b0eb86e, type: 3}
     volume: 0.1
     pitch: 1.21
+    loop: 0
     source: {fileID: 0}
   - name: ShotgunSound
     clip: {fileID: 8300000, guid: e7a217ecfdfd6da4e84a7bde69ebaec8, type: 3}
     volume: 0.1
     pitch: 1.21
+    loop: 0
+    source: {fileID: 0}
+  - name: MedKitPickUp
+    clip: {fileID: 8300000, guid: 41c31f528233a9546950b5a511f9dee2, type: 3}
+    volume: 0.1
+    pitch: 1.21
+    loop: 0
+    source: {fileID: 0}
+  - name: Theme_Music_1
+    clip: {fileID: 8300000, guid: 74c9c1c3ad8d6e448a01e19d7bb0b9d2, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
     source: {fileID: 0}
