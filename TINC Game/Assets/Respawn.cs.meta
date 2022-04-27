@@ -4,9 +4,13 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - redFlag: {instanceID: 0}
-  - greenFlag: {instanceID: 0}
+  - redFlag: {fileID: 21300000, guid: 37e72e304f6f74743949925ce978eee7, type: 3}
+  - greenFlag: {fileID: 21300000, guid: e5f97bcf11ebfff4793ae5e5bf6b975e, type: 3}
+  - playerController: {instanceID: 0}
   - fallDetector: {fileID: 1973301302142241764, guid: 143c90997e331794d99644eb62ee2e7a, type: 3}
+  - worldController: {fileID: 3506845988773953939, guid: 19a39ff92611b8b4cbad838297928270, type: 3}
+  - worldCamera: {instanceID: 0}
+  - weaponUI: {fileID: 3506845988773953939, guid: 19a39ff92611b8b4cbad838297928270, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
