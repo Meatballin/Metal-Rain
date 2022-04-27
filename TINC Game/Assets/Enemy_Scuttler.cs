@@ -53,7 +53,7 @@ public class Enemy_Scuttler : MonoBehaviour{
     public bool shoots_bullets = false;
     public GameObject bulletPrefab;
     public Transform firePoint;
-    public float bullet_speed = 2000f;
+    public float bullet_speed = 100f;
 
     // Start is called before the first frame update
     void Start(){
@@ -184,6 +184,7 @@ public class Enemy_Scuttler : MonoBehaviour{
 
                         GameObject fired_bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
                         fired_bullet.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(targetDir.x*bullet_speed, targetDir.y*bullet_speed));
+                        fired_bullet.GetComponent<Bullet_Enemy>().damage = attackDamage;
                     }
                     
                 }

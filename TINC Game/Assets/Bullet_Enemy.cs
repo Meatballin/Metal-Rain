@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet_Enemy : MonoBehaviour
 {
-    public int damage = 70;
+    public float damage = 70;
     public Rigidbody2D rb;
 
     public GameObject destroyEffect;

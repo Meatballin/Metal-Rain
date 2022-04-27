@@ -6,11 +6,6 @@ public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
     public static AudioManager instance;
-
-    private void Start()
-    {
-        Play("Theme1");
-    }
     private void Awake()
     {
         if (instance == null)
@@ -38,4 +33,9 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Play();
     }
+
+    void Start(){
+        Play("Theme_Music_1");
+    }
+
 }
