@@ -11,6 +11,11 @@ TagManager:
   - Rocket
   - Shootable
   - Hazard
+  - M4
+  - RPG
+  - Shotgun
+  - Grenade
+  - HealthPack
   layers:
   - Default
   - TransparentFX
