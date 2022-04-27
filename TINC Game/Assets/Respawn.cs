@@ -19,8 +19,8 @@ public class Respawn : MonoBehaviour{
     public GameObject player;
     public GameObject worldController;
     public Camera worldCamera;
-    public GameObject weaponUI;
-    public GameObject hearts;
+    // public GameObject weaponUI;
+    // public GameObject hearts;
     public LevelManager levelManager;
    
     void Start(){

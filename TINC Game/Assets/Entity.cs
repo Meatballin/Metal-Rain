@@ -6,7 +6,7 @@ public class Entity : MonoBehaviour
 {
     public bool is_immortal = false;
     public bool is_player = false;
-    public static float health = 100;
+    public float health = 100;
     public  GameObject deathEffect;
     public  GameObject collisionEffect;
     public  float damage;

@@ -6,10 +6,9 @@ using UnityEngine.SceneManagement;
 public class Lives : MonoBehaviour
 {
     public GameObject Heart1 , Heart2 , Heart3 , Heart4 , Heart5 , Heart6;
-    public int life;
+    public int life = 3;
     // Start is called before the first frame update
     void Start(){
-        life = 3;
         Heart1.gameObject.SetActive(true);
         Heart2.gameObject.SetActive(true);
         Heart3 .gameObject.SetActive(true); 
