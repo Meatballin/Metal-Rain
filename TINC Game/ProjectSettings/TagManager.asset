@@ -16,6 +16,8 @@ TagManager:
   - Shotgun
   - Grenade
   - HealthPack
+  - Bar
+  - Heart
   layers:
   - Default
   - TransparentFX
@@ -33,7 +35,7 @@ TagManager:
   - SGPickup
   - 
   - 
-  - 
+  - Enemy Bullet
   - 
   - Hazard
   - 

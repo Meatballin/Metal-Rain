@@ -23,10 +23,10 @@ public class Weapon : MonoBehaviour
     //RIFLE CODE
     public GameObject rifleMuzzleFlash;
     public GameObject bulletPrefab;
-    private bool isFlashing = false;
+    // private bool isFlashing = false;
     private float rifleFireRate = 0.1195f;
     private float framesFlashed;
-    private float maxFlashFrames = 2f;
+    // private float maxFlashFrames = 2f;
     private float lastShot = 0.0f;
 
     //ROCKET LAUNCHER CODE

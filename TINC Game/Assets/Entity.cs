@@ -7,15 +7,17 @@ public class Entity : MonoBehaviour
     public bool is_immortal = false;
     public bool is_player = false;
     public float health = 100;
-    public GameObject deathEffect;
-    public GameObject collisionEffect;
-
-    private float damageConstant = 1;
+    public  GameObject deathEffect;
+    public  GameObject collisionEffect;
+    public  float damage;
+    public  float magnitude;
+    public float damageConstant = 1;
     public float impactResistance = 0;
- 
-    void Start()
-    {
-        // Called on start!
+    public LevelManager levelManager;
+    public Lives lives;
+    void Start(){   
+        levelManager = FindObjectOfType<LevelManager>();    
+        lives = FindObjectOfType<Lives>();
     }
 
 
@@ -24,9 +26,9 @@ public class Entity : MonoBehaviour
         GameObject collisionPartner = collision.gameObject;
 
         // Return zero or the damage, whichever is higher
-        float magnitude = Mathf.Max(0f, impactVelocity.magnitude - impactResistance);
+         magnitude = Mathf.Max(0f, impactVelocity.magnitude - impactResistance);
         // Calculate damage and apply it
-        float damage = magnitude * damageConstant;
+        damage = magnitude * damageConstant;
 
         // If there is a collision effect produce it
         if ((damage > 0) && (collisionEffect != null)){
@@ -39,13 +41,11 @@ public class Entity : MonoBehaviour
         // Debug.Log("COLLISION DAMAGE: " + damage);
     }
 
-    public void ApplyDamage(float damage)
-    {
+    public void ApplyDamage(float damage) { 
 
         if (is_immortal == false){
            health -= damage;
-            if (health <= 0)
-            {
+            if (health <= 0){
                 OnDestruction();
             }
         }
@@ -59,7 +59,10 @@ public class Entity : MonoBehaviour
         }
         if (is_player == true){
             transform.position = gameObject.GetComponent<Respawn>().respawnpoint;
-            health = 200f;
+            levelManager.Respawn();
+            health = 100;
+            lives.life--;
+
         }
         else{
             Destroy(gameObject);
