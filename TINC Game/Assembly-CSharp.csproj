@@ -101,6 +101,7 @@
     <Compile Include="Assets\Try_Again.cs" />
     <Compile Include="Assets\Weapon.cs" />
     <Compile Include="Assets\Press_Start.cs" />
+    <Compile Include="Assets\missle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\2DWeaponPack\Sprites\README.txt" />
