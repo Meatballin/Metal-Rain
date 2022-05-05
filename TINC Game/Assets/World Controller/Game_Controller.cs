@@ -35,6 +35,10 @@ public class Game_Controller : MonoBehaviour
             // settings.startColor = new ParticleSystem.MinMaxGradient(Color.yellow);
          }
 
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
 
     }
 }
