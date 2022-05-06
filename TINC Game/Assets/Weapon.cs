@@ -31,7 +31,9 @@ public class Weapon : MonoBehaviour
 
     //ROCKET LAUNCHER CODE
     public GameObject rocketPrefab;
-    private float rpgFireRate = 0.35f;
+    private float rpgFireRate = 0.5f;
+    public GameObject RPGMuzzleFlashObject;
+    
 
     //SHOTGUN CODE
     private float shotgunFireRate = 0.8f;
@@ -47,6 +49,7 @@ public class Weapon : MonoBehaviour
     public Animator RPGAnimator;
     public Animator ShotgunAnimator;
     public Animator MuzzleFlash;
+    public Animator RPGMuzzleFlash;
 
     private void Start()
     {
@@ -151,25 +154,64 @@ public class Weapon : MonoBehaviour
     private void AnimHandler()
     {
         //Deals with m4 muzzle flash animation
-        if(Input.GetButton("Fire1") && weapons[1])
+        if(Input.GetButton("Fire1") && weapons[1] && (currentWeapon == 1))
         {
             rifleMuzzleFlash.SetActive(true);
             MuzzleFlash.ResetTrigger("NotShooting");
             MuzzleFlash.SetTrigger("Shooting");
         }
-        
-        //Deals with turning off Muzzle Flash animation possibly for all weapons
+        //Deals with RPG muzzle flash animation
+        /*if (Input.GetMouseButtonDown(0) && weapons[2] && (currentWeapon == 2))
+        {
+            
+            RPGMuzzleFlashObject.SetActive(true);
+            RPGMuzzleFlash.SetTrigger("HasShot");
+                
+            
+            //RPGMuzzleFlash.SetTrigger("HasNotShot");
+           
+        }*/
+
+        //Deals with turning off Muzzle Flash animation when not on current weapon
         if (Input.GetButtonUp("Fire1"))
         {
-            if(weapons[1])
+            if(weapons[1] && (currentWeapon != 1))
+            {
+                rifleMuzzleFlash.SetActive(false);
+                
+            }
+            if(weapons[1] && (currentWeapon == 1))
             {
                 rifleMuzzleFlash.SetActive(false);
                 MuzzleFlash.ResetTrigger("Shooting");
                 MuzzleFlash.SetTrigger("NotShooting");
             }
-           
+            //Deals with RPG Muzzle Flash Anim
+            /*if (weapons [2] && currentWeapon != 2)
+            {
+                RPGMuzzleFlashObject.SetActive(false);
+              
+            }
+            if (weapons[2] && (currentWeapon == 2))
+            {
+                RPGMuzzleFlashObject.SetActive(false);
+                RPGMuzzleFlash.ResetTrigger("HasShot");
+                RPGMuzzleFlash.SetTrigger("HasNotShot");
+            }*/
+
         }
+        
+
     }
+    IEnumerator RPGWaitTime()
+    {
+        yield return new WaitForSeconds(0.2f);
+        RPGMuzzleFlash.ResetTrigger("HasShot");
+        RPGMuzzleFlash.SetTrigger("HasNotShot");
+        RPGMuzzleFlashObject.SetActive(false);
+        
+    }
+
     //sets up our boolean array for weapon handling
     private void initializeWepScene()
     {
@@ -230,7 +272,7 @@ public class Weapon : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Play("RifleBulletSound");
             M4Animator.SetTrigger("Shoot");
-            
+           
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             lastShot = Time.time;
 
@@ -276,22 +318,29 @@ public class Weapon : MonoBehaviour
         transform.GetChild(1).GetChild(4).gameObject.SetActive(false);
 
         AimHandler();
+        
         if(Input.GetButtonDown("Fire1"))
         {
+            
             RPGShoot();
+            
         }
     }
     private void RPGShoot()
     {
         if (Time.time > rpgFireRate + lastShot)
         {
+            RPGMuzzleFlashObject.SetActive(true);
+            RPGMuzzleFlash.SetTrigger("HasShot");
             RPGAnimator.SetTrigger("Shoot");
             Instantiate(rocketPrefab, firePoint.position, firePoint.rotation);
             FindObjectOfType<AudioManager>().Play("RocketLaunch");
             lastShot = Time.time;
-            
+            StartCoroutine(RPGWaitTime());
+
         }
     }
+   
 
     //======================================================================================
 
