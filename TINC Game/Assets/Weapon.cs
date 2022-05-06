@@ -160,17 +160,7 @@ public class Weapon : MonoBehaviour
             MuzzleFlash.ResetTrigger("NotShooting");
             MuzzleFlash.SetTrigger("Shooting");
         }
-        //Deals with RPG muzzle flash animation
-        /*if (Input.GetMouseButtonDown(0) && weapons[2] && (currentWeapon == 2))
-        {
-            
-            RPGMuzzleFlashObject.SetActive(true);
-            RPGMuzzleFlash.SetTrigger("HasShot");
-                
-            
-            //RPGMuzzleFlash.SetTrigger("HasNotShot");
-           
-        }*/
+        
 
         //Deals with turning off Muzzle Flash animation when not on current weapon
         if (Input.GetButtonUp("Fire1"))
@@ -186,18 +176,7 @@ public class Weapon : MonoBehaviour
                 MuzzleFlash.ResetTrigger("Shooting");
                 MuzzleFlash.SetTrigger("NotShooting");
             }
-            //Deals with RPG Muzzle Flash Anim
-            /*if (weapons [2] && currentWeapon != 2)
-            {
-                RPGMuzzleFlashObject.SetActive(false);
-              
-            }
-            if (weapons[2] && (currentWeapon == 2))
-            {
-                RPGMuzzleFlashObject.SetActive(false);
-                RPGMuzzleFlash.ResetTrigger("HasShot");
-                RPGMuzzleFlash.SetTrigger("HasNotShot");
-            }*/
+           
 
         }
         
@@ -417,6 +396,8 @@ public class Weapon : MonoBehaviour
 
         }
     }
+
+   
     private void AimHandler()
     {
         Vector3 mousePos = GetMouseWorldPosition();
@@ -429,7 +410,7 @@ public class Weapon : MonoBehaviour
             localScale.y = -1f;
         else
             localScale.y = +1f;
-
+        
         transform.localScale = localScale;
 
     }
@@ -459,6 +440,7 @@ public class Weapon : MonoBehaviour
             //set index 1 in boolean array to true, giving us m4 access
             weapons[1] = true;
             weaponUI.transform.Find("M4Icon").gameObject.SetActive(true);
+            FindObjectOfType<AudioManager>().Play("RiflePickUp");
             Destroy(collision.gameObject);
         }
         //If we run into RPG pickup
@@ -466,21 +448,21 @@ public class Weapon : MonoBehaviour
         {
             weapons[2] = true;
             weaponUI.transform.Find("RPGIcon").gameObject.SetActive(true);
-            
+            FindObjectOfType<AudioManager>().Play("RocketPickUp");
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Shotgun"))
         {
             weapons[3] = true;
             weaponUI.transform.Find("ShotgunIcon").gameObject.SetActive(true);
-
+            FindObjectOfType<AudioManager>().Play("ShotgunPickUp");
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Grenade"))
         {
             weapons[4] = true;
             weaponUI.transform.Find("GrenadeIcon").gameObject.SetActive(true);
-
+            FindObjectOfType<AudioManager>().Play("GrenadePickUp");
             Destroy(collision.gameObject);
         }
 
