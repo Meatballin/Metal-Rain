@@ -38,6 +38,7 @@ public class Weapon : MonoBehaviour
     //SHOTGUN CODE
     private float shotgunFireRate = 0.8f;
     public GameObject pellet;
+    public GameObject ShotgunMuzzleFlashObject;
 
     //GRENADE CODE
     private float grenadeThrowRate = 0.75f;
@@ -50,6 +51,7 @@ public class Weapon : MonoBehaviour
     public Animator ShotgunAnimator;
     public Animator MuzzleFlash;
     public Animator RPGMuzzleFlash;
+    public Animator ShotgunMuzzleFlash;
 
     private void Start()
     {
@@ -189,6 +191,14 @@ public class Weapon : MonoBehaviour
         RPGMuzzleFlash.SetTrigger("HasNotShot");
         RPGMuzzleFlashObject.SetActive(false);
         
+    }
+
+    IEnumerator ShotgunWaitTime()
+    {
+        yield return new WaitForSeconds(0.2f);
+        ShotgunMuzzleFlash.ResetTrigger("ShotgunShot");
+        ShotgunMuzzleFlash.SetTrigger("NoShotgunShot");
+        ShotgunMuzzleFlashObject.SetActive(false);
     }
 
     //sets up our boolean array for weapon handling
@@ -349,6 +359,8 @@ public class Weapon : MonoBehaviour
             Quaternion newRotation = firePoint.rotation;
             float spread = 1;
             ShotgunAnimator.SetTrigger("Shoot");
+            ShotgunMuzzleFlashObject.SetActive(true);
+            ShotgunMuzzleFlash.SetTrigger("ShotgunShot");
             FindObjectOfType<AudioManager>().Play("ShotgunSound");
             for (int i = 0; i < bulletCount; i++)
             {
@@ -360,6 +372,7 @@ public class Weapon : MonoBehaviour
                 Instantiate(pellet, firePoint.position, newRotation);
             }
             lastShot = Time.time;
+            StartCoroutine(ShotgunWaitTime());
         }
     }
     //======================================================================================
