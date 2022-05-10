@@ -6,7 +6,6 @@ using UnityEngine;
 public class missle : MonoBehaviour{
     // Start is called before the first frame update
     public Transform target;
-    public GameObject player;
     private Rigidbody2D rb;
     public GameObject explosion;
     public float speed = 20f;
@@ -30,14 +29,17 @@ public class missle : MonoBehaviour{
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.tag == "Player"){
             Instantiate(explosion, transform.position, transform.rotation);
+            collision.GetComponent<Entity>().health += -damage;
             Destroy(gameObject);
-            player.GetComponent<Entity>().health -= damage;
         }
-
-
-        else{
+        if((collision.tag == "Shootable" || collision.tag == "Bullet" || collision.tag == "Rocket") & (collision.GetComponent<Enemy_Scuttler>() == null)){
             Instantiate(explosion, transform.position, transform.rotation);
+            if (collision.tag == "Bullet" || collision.tag == "Rocket"){
+                Destroy(collision.gameObject);
+            }
             Destroy(gameObject);
         }
+
+        
     }
 }

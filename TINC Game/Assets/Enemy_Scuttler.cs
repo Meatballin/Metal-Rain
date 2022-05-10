@@ -51,6 +51,7 @@ public class Enemy_Scuttler : MonoBehaviour{
     public float chaseRadius = 10f;
 
     public bool shoots_bullets = false;
+    public bool fires_missiles = false;
     public GameObject bulletPrefab;
     public Transform firePoint;
     public float bullet_speed = 100f;
@@ -183,8 +184,13 @@ public class Enemy_Scuttler : MonoBehaviour{
                         firePoint.transform.position = new Vector2(gameObject.transform.position.x + fire_offset.x, gameObject.transform.position.y + fire_offset.y);
 
                         GameObject fired_bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-                        fired_bullet.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(targetDir.x*bullet_speed, targetDir.y*bullet_speed));
-                        fired_bullet.GetComponent<Bullet_Enemy>().damage = attackDamage;
+                        
+                        if (fires_missiles == true){
+                            fired_bullet.GetComponent<missle>().target = Player.self_object.transform;
+                        }else{
+                            fired_bullet.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(targetDir.x*bullet_speed, targetDir.y*bullet_speed));
+                            fired_bullet.GetComponent<Bullet_Enemy>().damage = attackDamage;
+                        }
                     }
                     
                 }

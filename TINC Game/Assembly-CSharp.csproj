@@ -41,6 +41,7 @@
      <Compile Include="Assets\PlatformCheck.cs" />
      <Compile Include="Assets\Enemy_Scuttler.cs" />
      <Compile Include="Assets\pendulum.cs" />
+     <Compile Include="Assets\Hiveling_Counter.cs" />
      <Compile Include="Assets\World Controller\Camera_Follow_Object.cs" />
      <Compile Include="Assets\Explosion_Physics.cs" />
      <Compile Include="Assets\LevelManager.cs" />
@@ -68,6 +69,7 @@
      <Compile Include="Assets\Dynamic Objects\JumpPads\JumpPadSmall.cs" />
      <Compile Include="Assets\Dynamic Objects\Weapons\Grenade.cs" />
      <Compile Include="Assets\TheMan.cs" />
+     <Compile Include="Assets\Spawn_Hivelings.cs" />
      <Compile Include="Assets\Dynamic Objects\JumpPads\JumpPadMedium.cs" />
      <Compile Include="Assets\Dynamic Objects\Weapons\Bullet.cs" />
      <Compile Include="Assets\TurretBullet\Turret.cs" />
@@ -86,8 +88,6 @@
      <Compile Include="Assets\Weapon.cs" />
      <Compile Include="Assets\Press_Start.cs" />
      <Compile Include="Assets\Tunnel_Light_Move.cs" />
-     <Compile Include="Assets\Spawn_Hivelings.cs" />
-     <Compile Include="Assets\Hiveling_Counter.cs" />
      <None Include="Assets\2DWeaponPack\Sprites\README.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.28f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

@@ -39,6 +39,7 @@ public class Player_Controller : MonoBehaviour{
 
     // The layers a player is allowed to jump off of
     public LayerMask Traverseable_Layers;
+    public GameObject self_object;
 
 
 
@@ -49,6 +50,7 @@ public class Player_Controller : MonoBehaviour{
         controlledFallForce = new Vector2(0, -Controlled_Fall_Speed);
         leftForce = new Vector2(-Acceleration, 0);
         rightForce = new Vector2(Acceleration, 0);
+        self_object = gameObject;
         //detects the starting position of the player
         //respawnpoint = transform.position;
     }

@@ -119,11 +119,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  player: {fileID: 0}
-  rb: {fileID: 0}
   explosion: {fileID: 7853511854988060698, guid: 7604e932282fe3e43829bb19e33bab48, type: 3}
-  speed: 20
-  rotatespeed: 200
+  speed: 10
+  rotatespeed: 400
+  damage: 10
 --- !u!60 &3425665422706573594
 PolygonCollider2D:
   m_ObjectHideFlags: 0
