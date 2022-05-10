@@ -426,6 +426,10 @@ public class Weapon : MonoBehaviour
         
         transform.localScale = localScale;
 
+        aimDirection = (mousePos - transform.position).normalized;
+        angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+        firePoint.eulerAngles = new Vector3(0, 0, angle);
+
     }
     
     
