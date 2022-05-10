@@ -62,6 +62,7 @@
      <Compile Include="Assets\SFX\Particle_Auto_Destroy.cs" />
      <Compile Include="Assets\Camera_Bias_Anchor.cs" />
      <Compile Include="Assets\Entity.cs" />
+     <Compile Include="Assets\Spawn_Tunnel_Lights.cs" />
      <Compile Include="Assets\missle.cs" />
      <Compile Include="Assets\Lives.cs" />
      <Compile Include="Assets\Dynamic Objects\JumpPads\JumpPadSmall.cs" />
@@ -72,6 +73,7 @@
      <Compile Include="Assets\TurretBullet\Turret.cs" />
      <Compile Include="Assets\Respawn.cs" />
      <Compile Include="Assets\Dynamic Objects\JumpPads\JumpPadLarge.cs" />
+     <Compile Include="Assets\Train_Velocity.cs" />
      <Compile Include="Assets\Sound.cs" />
      <Compile Include="Assets\sprite muzzle flashes\AnimatedTexture.cs" />
      <Compile Include="Assets\TurretBullet\Tbullet_destroy.cs" />
@@ -83,9 +85,9 @@
      <Compile Include="Assets\Try_Again.cs" />
      <Compile Include="Assets\Weapon.cs" />
      <Compile Include="Assets\Press_Start.cs" />
-     <Compile Include="Assets\Spawn_Tunnel_Lights.cs" />
      <Compile Include="Assets\Tunnel_Light_Move.cs" />
-     <Compile Include="Assets\Train_Velocity.cs" />
+     <Compile Include="Assets\Spawn_Hivelings.cs" />
+     <Compile Include="Assets\Hiveling_Counter.cs" />
      <None Include="Assets\2DWeaponPack\Sprites\README.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.28f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

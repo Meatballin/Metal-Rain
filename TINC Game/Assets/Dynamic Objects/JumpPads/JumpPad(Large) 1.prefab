@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2385493747190727896}
   - component: {fileID: 2385493747190727903}
   - component: {fileID: -3266780953093091004}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: JumpPad(Large) 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 8064044880927085412}
   - component: {fileID: 8064044880927085414}
   - component: {fileID: 8064044880927085413}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: JumpPadBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -8,7 +8,7 @@ public class Camera_Bias_Anchor : MonoBehaviour
     public Transform player_object;
     private Vector2 anchor_point;
     public int camera_bias_constant = 4;
-    private int weight_count = 0;
+    // private int weight_count = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -43,6 +43,6 @@ public class Camera_Bias_Anchor : MonoBehaviour
 
         gameObject.transform.position = new Vector2(anchor_point.x, anchor_point.y);
 
-        weight_count = 0;
+        // weight_count = 0;
     }
 }
