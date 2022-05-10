@@ -50,6 +50,7 @@
      <Compile Include="Assets\TurretBullet.cs" />
      <Compile Include="Assets\Dynamic Objects\Ladder\LadderMovement.cs" />
      <Compile Include="Assets\ObjectRotate.cs" />
+     <Compile Include="Assets\Next_Mission_Press.cs" />
      <Compile Include="Assets\Dynamic Objects\Weapons\Pellet.cs" />
      <Compile Include="Assets\HealthPack.cs" />
      <Compile Include="Assets\Bullet_Enemy.cs" />
@@ -88,7 +89,6 @@
      <Compile Include="Assets\Weapon.cs" />
      <Compile Include="Assets\Press_Start.cs" />
      <Compile Include="Assets\Tunnel_Light_Move.cs" />
-     <Compile Include="Assets\Next_Mission_Press.cs" />
      <None Include="Assets\2DWeaponPack\Sprites\README.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.28f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
