@@ -60,6 +60,7 @@
      <Compile Include="Assets\DestroyBond.cs" />
      <Compile Include="Assets\MovingPlatform.cs" />
      <Compile Include="Assets\SFX\Particle_Auto_Destroy.cs" />
+     <Compile Include="Assets\Camera_Bias_Anchor.cs" />
      <Compile Include="Assets\Entity.cs" />
      <Compile Include="Assets\Lives.cs" />
      <Compile Include="Assets\Dynamic Objects\JumpPads\JumpPadSmall.cs" />
@@ -81,7 +82,6 @@
      <Compile Include="Assets\Try_Again.cs" />
      <Compile Include="Assets\Weapon.cs" />
      <Compile Include="Assets\Press_Start.cs" />
-     <Compile Include="Assets\Camera_Bias_Anchor.cs" />
      <None Include="Assets\2DWeaponPack\Sprites\README.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.28f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
