@@ -9,12 +9,20 @@ TagManager:
   - Ladder
   - checkpoint
   - Rocket
+  - Shootable
   - Hazard
+  - M4
+  - RPG
+  - Shotgun
+  - Grenade
+  - HealthPack
+  - Bar
+  - Heart
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ladder
   - Water
   - UI
   - Static Platforms
@@ -22,12 +30,12 @@ TagManager:
   - Player
   - Hittable
   - Particles
+  - M4Pickup
+  - RPGPickup
+  - SGPickup
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Enemy Bullet
   - 
   - Hazard
   - 

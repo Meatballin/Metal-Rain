@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
             instance = this;
         else
         {
+            Debug.Log("IM DEADDDDD");
             Destroy(gameObject);
             return;
         }
@@ -24,6 +25,7 @@ public class AudioManager : MonoBehaviour
 
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
+            s.source.loop = s.loop;
         }
     }
 
@@ -32,4 +34,9 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Play();
     }
+
+    void Start(){
+        
+    }
+
 }

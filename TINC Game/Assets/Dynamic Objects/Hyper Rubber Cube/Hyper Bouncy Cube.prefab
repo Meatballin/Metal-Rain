@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1626119850991907863}
   m_Layer: 9
   m_Name: Hyper Bouncy Cube
-  m_TagString: Untagged
+  m_TagString: Shootable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,4 +174,5 @@ MonoBehaviour:
   is_immortal: 0
   health: 100
   deathEffect: {fileID: 7853511854988060698, guid: c2c97155cf6b24a46afe7c620ac3ac37, type: 3}
+  collisionEffect: {fileID: 0}
   impactResistance: 10

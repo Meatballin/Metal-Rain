@@ -13,8 +13,8 @@ public class Turret : MonoBehaviour
     public float FireRate;
     float nextTimeToFire = 0;
     public Transform Shootpoint;
-    public float Force;
-
+    public float Force = 10f;
+    private float distanceToPlayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +43,12 @@ public class Turret : MonoBehaviour
                 }
             }
         }
+        distanceToPlayer = Vector2.Distance(Target.transform.position, this.gameObject.transform.position);
+        if(distanceToPlayer > 40)
+        {
+            Detected = false;
+        }
+
         if (Detected)
         {
             Gun.transform.up = Direction;

@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7845095633634102873}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 61.75, y: 5.76, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalPosition: {x: 61.9, y: 6.28, z: 0}
+  m_LocalScale: {x: 0.34696, y: 0.41456, z: 0.4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -97,10 +97,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52aaa27511488a44db70a2bc406fa409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 120
+  speed: 100
   damage: 70
+  explosionPower: 2000
+  explosionRadius: 3.25
   rb: {fileID: -7192607719058685156}
   destroyEffect: {fileID: 7853511854988060698, guid: 7604e932282fe3e43829bb19e33bab48, type: 3}
+  impulseObject: {fileID: 2779372367291317033, guid: bd91490133a30e247a5d572bf9022ac3, type: 3}
 --- !u!50 &-7192607719058685156
 Rigidbody2D:
   serializedVersion: 4
@@ -135,6 +138,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.54021835, y: 0.5893316}
-  m_Size: {x: 3.320979, y: 0.874699}
+  m_Offset: {x: 0.29733932, y: 0.577547}
+  m_Size: {x: 0.9543306, y: 0.24690259}
   m_Direction: 1

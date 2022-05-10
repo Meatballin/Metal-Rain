@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4836338965606184292}
   m_Layer: 7
   m_Name: Bouncy Cube
-  m_TagString: Untagged
+  m_TagString: Shootable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,4 +174,5 @@ MonoBehaviour:
   is_immortal: 0
   health: 100
   deathEffect: {fileID: 0}
+  collisionEffect: {fileID: 0}
   impactResistance: 7

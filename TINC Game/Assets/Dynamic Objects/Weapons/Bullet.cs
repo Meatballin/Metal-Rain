@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 120f;
+    public float speed = 100f;
     public int damage = 70;
     public Rigidbody2D rb;
 
     public GameObject destroyEffect;
 
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +25,18 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D hitInfo)
     {
+        // Entity integration
         if (hitInfo.tag == "Shootable"){
             Entity entity = hitInfo.GetComponent<Entity>();
+            if (entity != null)
+                {
+                    entity.ApplyDamage(damage);
+                    if (destroyEffect != null){
+                        GameObject newExplosion = Instantiate(destroyEffect, gameObject.transform.position, Quaternion.identity);
+                        
+                    }
+                    Destroy(gameObject);
+                }
         }
 
 
@@ -35,9 +46,10 @@ public class Bullet : MonoBehaviour
         {
             enemy.TakeDamage(damage);
         }
-        if(hitInfo.gameObject.layer == 9)
+        if(hitInfo.gameObject.CompareTag("Shootable"))
         {
             GameObject newExplosion = Instantiate(destroyEffect, gameObject.transform.position, Quaternion.identity);
+            FindObjectOfType<AudioManager>().Play("RifleBulletHit");
             Destroy(gameObject);
         }
         
