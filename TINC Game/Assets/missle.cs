@@ -7,10 +7,11 @@ public class missle : MonoBehaviour{
     // Start is called before the first frame update
     public Transform target;
     public GameObject player;
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     public GameObject explosion;
     public float speed = 20f;
     public float rotatespeed = 200f;
+    public float damage = 40f;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();   
@@ -30,7 +31,7 @@ public class missle : MonoBehaviour{
         if(collision.tag == "Player"){
             Instantiate(explosion, transform.position, transform.rotation);
             Destroy(gameObject);
-            player.GetComponent<Entity>().health -= 40;
+            player.GetComponent<Entity>().health -= damage;
         }
 
 
