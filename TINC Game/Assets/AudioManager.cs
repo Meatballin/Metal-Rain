@@ -6,13 +6,14 @@ public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
     public static AudioManager instance;
+    public AudioSource Level_1_Music;
     private void Awake()
     {
         if (instance == null)
             instance = this;
         else
         {
-            Debug.Log("IM DEADDDDD");
+            
             Destroy(gameObject);
             return;
         }
@@ -35,8 +36,7 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
-    void Start(){
-        
-    }
+
+
 
 }
