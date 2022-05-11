@@ -135,6 +135,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
-  damage: 10
+  damage: 15
   rb: {fileID: 5650424433014260062}
   destroyEffect: {fileID: 5141351578384621276, guid: 70551ca4c2cfe224881c66998fa881ef, type: 3}
