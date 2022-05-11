@@ -198,9 +198,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interval: 5
-  hive_max: 40
+  hive_max: 20
   hive_count: 0
   hiveling: {fileID: 6312088666046420959, guid: f993de8a3ac8c7b4d86c8e180ac8e6b9, type: 3}
+  start_spawning_distance: 50
 --- !u!255 &9181067411966232769
 FixedJoint2D:
   m_ObjectHideFlags: 0

@@ -418,7 +418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 705023693974658987, guid: 1a0948a4422463b4e8d2ed47618fe7bf, type: 3}
       propertyPath: m_Color.b
-      value: 0.7311321
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 705023693974658987, guid: 1a0948a4422463b4e8d2ed47618fe7bf, type: 3}
       propertyPath: m_Color.g
@@ -426,7 +426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 705023693974658987, guid: 1a0948a4422463b4e8d2ed47618fe7bf, type: 3}
       propertyPath: m_Color.r
-      value: 0.89542484
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 705023693974658987, guid: 1a0948a4422463b4e8d2ed47618fe7bf, type: 3}
       propertyPath: m_PointLightInnerAngle

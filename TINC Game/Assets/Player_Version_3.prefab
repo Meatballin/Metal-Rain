@@ -340,7 +340,7 @@ MonoBehaviour:
   damage: 0
   magnitude: 0
   damageConstant: 1
-  impactResistance: 35
+  impactResistance: 45
   levelManager: {fileID: 0}
   lives: {fileID: 0}
 --- !u!114 &3076175824417458830
